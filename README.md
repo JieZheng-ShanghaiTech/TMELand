@@ -25,7 +25,7 @@ $ python ./MainPage.py
 For macOS:
 
 ```
-$ python ./ MainPageForMac.py
+$ python ./MainPageForMac.py
 ```
 
 

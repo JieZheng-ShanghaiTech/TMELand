@@ -44,8 +44,10 @@ The TMELand supports TSV, ODE, SBML, and TME files.
 
 #### Main functions:
 * Model visualization
+
 After loading your models, you can obtain the parsed and visualized results of your models.
 * Drawing landscape
+
 To draw a landscape, there are three steps:
 1. **Form ODE equations** (only needed for TSV models): by `Dynamics setting` button to generate ODE equations.
 
@@ -54,6 +56,7 @@ To draw a landscape, there are three steps:
 3. **Update**: you can adjust the marker genes and range to update the landscape by `Update` button. If you need to change model-related parameters, you only need to click `Draw` button without reupdate. Furthermore, update is also worked for a TME model, you can update the landscape shape after load a TME model.
 
 * Drawing transition paths
+
 After drawing the landscape, you can draw state transition paths between two attractors by specifying time range, granularity, beginning and ending attractors. You can also draw paths after load a TME model, and update landscape will keep paths.
 
 For more details, please refer to the [User Manual](https://github.com/JieZheng-ShanghaiTech/TMELand/blob/main/TMELand%20Manual.pdf).

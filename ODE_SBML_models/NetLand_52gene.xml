@@ -1,0 +1,4501 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<!-- Created by JSBMLexample version 1.0 on 2015-02-14 at 20:02:54 SGT with JSBML version 1.0-rc1. -->
+<sbml xmlns="http://www.sbml.org/sbml/level2/version3" level="2" version="3">
+  <model metaid="bc25e036-4882-446e-b8f8-0c0e23d9a05e" id="NetLand_NetLand_temp_1447998459591">
+    <annotation>
+	<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:vCard="http://www.w3.org/2001/vcard-rdf/3.0#">
+	<rdf:Description rdf:about="#bc25e036-4882-446e-b8f8-0c0e23d9a05e">
+	<dc:creator>
+	<rdf:Bag>
+	<rdf:li rdf:parseType="Resource">
+	<vCard:N rdf:parseType="Resource">
+	<vCard:Family>G</vCard:Family>
+	<vCard:Given>J</vCard:Given>
+	</vCard:N>
+	<vCard:EMAIL>guojing.srtp@gmail.com</vCard:EMAIL>
+	<vCard:ORG rdf:parseType="Resource">
+	<vCard:Orgname>NetLand</vCard:Orgname>
+	</vCard:ORG>
+	</rdf:li>
+	</rdf:Bag>
+	</dc:creator>
+	</rdf:Description>
+	</rdf:RDF>
+	</annotation>
+      <listOfCompartments>
+      <compartment name="cytosol" id="cytosol" size="1"/>
+      <compartment name="compartment" id="compartment" size="1"/>
+    </listOfCompartments>
+    <listOfSpecies>
+      <species boundaryCondition="false" hasOnlySubstanceUnits="true" initialAmount="1" compartment="cytosol" name="CDX2" id="CDX2"/>
+      <species boundaryCondition="false" hasOnlySubstanceUnits="true" initialAmount="1" compartment="cytosol" name="PBX1" id="PBX1"/>
+      <species boundaryCondition="false" hasOnlySubstanceUnits="true" initialAmount="1" compartment="cytosol" name="GATA6" id="GATA6"/>
+      <species boundaryCondition="false" hasOnlySubstanceUnits="true" initialAmount="1" compartment="cytosol" name="E2F4" id="E2F4"/>
+      <species boundaryCondition="false" hasOnlySubstanceUnits="true" initialAmount="1" compartment="cytosol" name="TDGF1" id="TDGF1"/>
+      <species boundaryCondition="false" hasOnlySubstanceUnits="true" initialAmount="1" compartment="cytosol" name="FOXA2" id="FOXA2"/>
+      <species boundaryCondition="false" hasOnlySubstanceUnits="true" initialAmount="1" compartment="cytosol" name="SOX17" id="SOX17"/>
+      <species boundaryCondition="false" hasOnlySubstanceUnits="true" initialAmount="1" compartment="cytosol" name="OCT4FOXD3" id="OCT4FOXD3"/>
+      <species boundaryCondition="false" hasOnlySubstanceUnits="true" initialAmount="1" compartment="cytosol" name="FOXA1" id="FOXA1"/>
+      <species boundaryCondition="false" hasOnlySubstanceUnits="true" initialAmount="1" compartment="cytosol" name="AFP" id="AFP"/>
+      <species boundaryCondition="false" hasOnlySubstanceUnits="true" initialAmount="1" compartment="cytosol" name="SUMO1" id="SUMO1"/>
+      <species boundaryCondition="false" hasOnlySubstanceUnits="true" initialAmount="1" compartment="cytosol" name="GATA4" id="GATA4"/>
+      <species boundaryCondition="false" hasOnlySubstanceUnits="true" initialAmount="1" compartment="cytosol" name="PIAS1" id="PIAS1"/>
+      <species boundaryCondition="false" hasOnlySubstanceUnits="true" initialAmount="1" compartment="cytosol" name="PRDM14" id="PRDM14"/>
+      <species boundaryCondition="false" hasOnlySubstanceUnits="true" initialAmount="1" compartment="cytosol" name="LMCD1" id="LMCD1"/>
+      <species boundaryCondition="false" hasOnlySubstanceUnits="true" initialAmount="1" compartment="cytosol" name="T" id="T"/>
+      <species boundaryCondition="false" hasOnlySubstanceUnits="true" initialAmount="1" compartment="cytosol" name="CSH1" id="CSH1"/>
+      <species boundaryCondition="false" hasOnlySubstanceUnits="true" initialAmount="1" compartment="cytosol" name="GATA2" id="GATA2"/>
+      <species boundaryCondition="false" hasOnlySubstanceUnits="true" initialAmount="1" compartment="cytosol" name="PIASy" id="PIASy"/>
+      <species boundaryCondition="false" hasOnlySubstanceUnits="true" initialAmount="1" compartment="cytosol" name="GATA3" id="GATA3"/>
+      <species boundaryCondition="false" hasOnlySubstanceUnits="true" initialAmount="1" compartment="cytosol" name="hCGa" id="hCGa"/>
+      <species boundaryCondition="false" hasOnlySubstanceUnits="true" initialAmount="1" compartment="cytosol" name="cAMP" id="cAMP"/>
+      <species boundaryCondition="false" hasOnlySubstanceUnits="true" initialAmount="1" compartment="cytosol" name="SP1" id="SP1"/>
+      <species boundaryCondition="false" hasOnlySubstanceUnits="true" initialAmount="1" compartment="cytosol" name="hCGb" id="hCGb"/>
+      <species boundaryCondition="false" hasOnlySubstanceUnits="true" initialAmount="1" compartment="cytosol" name="SP3" id="SP3"/>
+      <species boundaryCondition="false" hasOnlySubstanceUnits="true" initialAmount="1" compartment="cytosol" name="BMP2K" id="BMP2K"/>
+      <species boundaryCondition="false" hasOnlySubstanceUnits="true" initialAmount="1" compartment="cytosol" name="BMP2" id="BMP2"/>
+      <species boundaryCondition="false" hasOnlySubstanceUnits="true" initialAmount="1" compartment="cytosol" name="HNF4A" id="HNF4A"/>
+      <species boundaryCondition="false" hasOnlySubstanceUnits="true" initialAmount="1" compartment="cytosol" name="bCAT" id="bCAT"/>
+      <species boundaryCondition="false" hasOnlySubstanceUnits="true" initialAmount="1" compartment="cytosol" name="CEBP" id="CEBP"/>
+      <species boundaryCondition="false" hasOnlySubstanceUnits="true" initialAmount="1" compartment="cytosol" name="FOXO1A" id="FOXO1A"/>
+      <species boundaryCondition="false" hasOnlySubstanceUnits="true" initialAmount="1" compartment="cytosol" name="LEF1" id="LEF1"/>
+      <species boundaryCondition="false" hasOnlySubstanceUnits="true" initialAmount="1" compartment="cytosol" name="LEF1bCat" id="LEF1bCat"/>
+      <species boundaryCondition="false" hasOnlySubstanceUnits="true" initialAmount="1" compartment="cytosol" name="Mad" id="Mad"/>
+      <species boundaryCondition="false" hasOnlySubstanceUnits="true" initialAmount="1" compartment="cytosol" name="MadMax" id="MadMax"/>
+      <species boundaryCondition="false" hasOnlySubstanceUnits="true" initialAmount="1" compartment="cytosol" name="MAX" id="MAX"/>
+      <species boundaryCondition="false" hasOnlySubstanceUnits="true" initialAmount="1" compartment="cytosol" name="MYC" id="MYC"/>
+      <species boundaryCondition="false" hasOnlySubstanceUnits="true" initialAmount="1" compartment="cytosol" name="TCF3" id="TCF3"/>
+      <species boundaryCondition="false" hasOnlySubstanceUnits="true" initialAmount="1" compartment="cytosol" name="MycMax" id="MycMax"/>
+      <species boundaryCondition="false" hasOnlySubstanceUnits="true" initialAmount="1" compartment="cytosol" name="MYCSP1" id="MYCSP1"/>
+      <species boundaryCondition="false" hasOnlySubstanceUnits="true" initialAmount="1" compartment="cytosol" name="NFYA" id="NFYA"/>
+      <species boundaryCondition="false" hasOnlySubstanceUnits="true" initialAmount="1" compartment="cytosol" name="SALL4" id="SALL4"/>
+      <species boundaryCondition="false" hasOnlySubstanceUnits="true" initialAmount="1" compartment="cytosol" name="ZNF206" id="ZNF206"/>
+      <species boundaryCondition="false" hasOnlySubstanceUnits="true" initialAmount="1" compartment="cytosol" name="NANOG" id="NANOG"/>
+      <species boundaryCondition="false" hasOnlySubstanceUnits="true" initialAmount="1" compartment="cytosol" name="OCT4" id="OCT4"/>
+      <species boundaryCondition="false" hasOnlySubstanceUnits="true" initialAmount="1" compartment="cytosol" name="OCT4Sox2" id="OCT4Sox2"/>
+      <species boundaryCondition="false" hasOnlySubstanceUnits="true" initialAmount="1" compartment="cytosol" name="SOX2" id="SOX2"/>
+      <species boundaryCondition="false" hasOnlySubstanceUnits="true" initialAmount="1" compartment="cytosol" name="ZIC3" id="ZIC3"/>
+      <species boundaryCondition="false" hasOnlySubstanceUnits="true" initialAmount="1" compartment="cytosol" name="KLF4" id="KLF4"/>
+      <species boundaryCondition="false" hasOnlySubstanceUnits="true" initialAmount="1" compartment="cytosol" name="FOXD3" id="FOXD3"/>
+      <species boundaryCondition="false" hasOnlySubstanceUnits="true" initialAmount="1" compartment="cytosol" name="ZFP42" id="ZFP42"/>
+      <species boundaryCondition="false" hasOnlySubstanceUnits="true" initialAmount="1" compartment="cytosol" name="GDF3" id="GDF3"/>
+    </listOfSpecies>
+    <listOfParameters>
+     
+    </listOfParameters>
+    <listOfReactions>
+      <reaction name="-CDX2+0.37*CDX2^3/(0.5^3+CDX2^3)+0.5*0.5^3/(0.5^3+OCT4^3)+0.5*0.5^3/(0.5^3+NANOG^3)" id="CDX2_synthesis">
+        <listOfModifiers>
+          <modifierSpeciesReference species="CDX2"/>
+          <modifierSpeciesReference species="OCT4"/>
+          <modifierSpeciesReference species="NANOG"/>
+        </listOfModifiers>
+        <listOfProducts>
+          <speciesReference species="CDX2"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <plus/>
+              <apply>
+                <plus/>
+                <apply>
+                  <plus/>
+                  <apply>
+                    <minus/>
+                    <ci> CDX2 </ci>
+                  </apply>
+                  <apply>
+                    <divide/>
+                    <apply>
+                      <times/>
+                      <cn> 0.37 </cn>
+                      <apply>
+                        <power/>
+                        <ci> CDX2 </ci>
+                        <cn type="integer"> 3 </cn>
+                      </apply>
+                    </apply>
+                    <apply>
+                      <plus/>
+                      <apply>
+                        <power/>
+                        <cn> 0.5 </cn>
+                        <cn type="integer"> 3 </cn>
+                      </apply>
+                      <apply>
+                        <power/>
+                        <ci> CDX2 </ci>
+                        <cn type="integer"> 3 </cn>
+                      </apply>
+                    </apply>
+                  </apply>
+                </apply>
+                <apply>
+                  <divide/>
+                  <apply>
+                    <times/>
+                    <cn> 0.5 </cn>
+                    <apply>
+                      <power/>
+                      <cn> 0.5 </cn>
+                      <cn type="integer"> 3 </cn>
+                    </apply>
+                  </apply>
+                  <apply>
+                    <plus/>
+                    <apply>
+                      <power/>
+                      <cn> 0.5 </cn>
+                      <cn type="integer"> 3 </cn>
+                    </apply>
+                    <apply>
+                      <power/>
+                      <ci> OCT4 </ci>
+                      <cn type="integer"> 3 </cn>
+                    </apply>
+                  </apply>
+                </apply>
+              </apply>
+              <apply>
+                <divide/>
+                <apply>
+                  <times/>
+                  <cn> 0.5 </cn>
+                  <apply>
+                    <power/>
+                    <cn> 0.5 </cn>
+                    <cn type="integer"> 3 </cn>
+                  </apply>
+                </apply>
+                <apply>
+                  <plus/>
+                  <apply>
+                    <power/>
+                    <cn> 0.5 </cn>
+                    <cn type="integer"> 3 </cn>
+                  </apply>
+                  <apply>
+                    <power/>
+                    <ci> NANOG </ci>
+                    <cn type="integer"> 3 </cn>
+                  </apply>
+                </apply>
+              </apply>
+            </apply>
+          </math>
+                </kineticLaw>
+      </reaction>
+      <reaction name="-PBX1+0.37*NANOG^3/(0.5^3+NANOG^3)" id="PBX1_synthesis">
+        <listOfModifiers>
+          <modifierSpeciesReference species="PBX1"/>
+          <modifierSpeciesReference species="NANOG"/>
+        </listOfModifiers>
+        <listOfProducts>
+          <speciesReference species="PBX1"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <plus/>
+              <apply>
+                <minus/>
+                <ci> PBX1 </ci>
+              </apply>
+              <apply>
+                <divide/>
+                <apply>
+                  <times/>
+                  <cn> 0.37 </cn>
+                  <apply>
+                    <power/>
+                    <ci> NANOG </ci>
+                    <cn type="integer"> 3 </cn>
+                  </apply>
+                </apply>
+                <apply>
+                  <plus/>
+                  <apply>
+                    <power/>
+                    <cn> 0.5 </cn>
+                    <cn type="integer"> 3 </cn>
+                  </apply>
+                  <apply>
+                    <power/>
+                    <ci> NANOG </ci>
+                    <cn type="integer"> 3 </cn>
+                  </apply>
+                </apply>
+              </apply>
+            </apply>
+          </math>
+                </kineticLaw>
+      </reaction>
+      <reaction name="-GATA6+0.37*GATA6^3/(0.5^3+GATA6^3)+0.5*0.5^3/(0.5^3+PRDM14^3)+0.5*0.5^3/(0.5^3+OCT4^3)+0.5*0.5^3/(0.5^3+LMCD1^3)+0.5*0.5^3/(0.5^3+NANOG^3)+0.5*0.5^3/(0.5^3+GATA4^3)" id="GATA6_synthesis">
+        <listOfModifiers>
+          <modifierSpeciesReference species="GATA6"/>
+          <modifierSpeciesReference species="PRDM14"/>
+          <modifierSpeciesReference species="OCT4"/>
+          <modifierSpeciesReference species="LMCD1"/>
+          <modifierSpeciesReference species="NANOG"/>
+          <modifierSpeciesReference species="GATA4"/>
+        </listOfModifiers>
+        <listOfProducts>
+          <speciesReference species="GATA6"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <plus/>
+              <apply>
+                <plus/>
+                <apply>
+                  <plus/>
+                  <apply>
+                    <plus/>
+                    <apply>
+                      <plus/>
+                      <apply>
+                        <plus/>
+                        <apply>
+                          <minus/>
+                          <ci> GATA6 </ci>
+                        </apply>
+                        <apply>
+                          <divide/>
+                          <apply>
+                            <times/>
+                            <cn> 0.37 </cn>
+                            <apply>
+                              <power/>
+                              <ci> GATA6 </ci>
+                              <cn type="integer"> 3 </cn>
+                            </apply>
+                          </apply>
+                          <apply>
+                            <plus/>
+                            <apply>
+                              <power/>
+                              <cn> 0.5 </cn>
+                              <cn type="integer"> 3 </cn>
+                            </apply>
+                            <apply>
+                              <power/>
+                              <ci> GATA6 </ci>
+                              <cn type="integer"> 3 </cn>
+                            </apply>
+                          </apply>
+                        </apply>
+                      </apply>
+                      <apply>
+                        <divide/>
+                        <apply>
+                          <times/>
+                          <cn> 0.5 </cn>
+                          <apply>
+                            <power/>
+                            <cn> 0.5 </cn>
+                            <cn type="integer"> 3 </cn>
+                          </apply>
+                        </apply>
+                        <apply>
+                          <plus/>
+                          <apply>
+                            <power/>
+                            <cn> 0.5 </cn>
+                            <cn type="integer"> 3 </cn>
+                          </apply>
+                          <apply>
+                            <power/>
+                            <ci> PRDM14 </ci>
+                            <cn type="integer"> 3 </cn>
+                          </apply>
+                        </apply>
+                      </apply>
+                    </apply>
+                    <apply>
+                      <divide/>
+                      <apply>
+                        <times/>
+                        <cn> 0.5 </cn>
+                        <apply>
+                          <power/>
+                          <cn> 0.5 </cn>
+                          <cn type="integer"> 3 </cn>
+                        </apply>
+                      </apply>
+                      <apply>
+                        <plus/>
+                        <apply>
+                          <power/>
+                          <cn> 0.5 </cn>
+                          <cn type="integer"> 3 </cn>
+                        </apply>
+                        <apply>
+                          <power/>
+                          <ci> OCT4 </ci>
+                          <cn type="integer"> 3 </cn>
+                        </apply>
+                      </apply>
+                    </apply>
+                  </apply>
+                  <apply>
+                    <divide/>
+                    <apply>
+                      <times/>
+                      <cn> 0.5 </cn>
+                      <apply>
+                        <power/>
+                        <cn> 0.5 </cn>
+                        <cn type="integer"> 3 </cn>
+                      </apply>
+                    </apply>
+                    <apply>
+                      <plus/>
+                      <apply>
+                        <power/>
+                        <cn> 0.5 </cn>
+                        <cn type="integer"> 3 </cn>
+                      </apply>
+                      <apply>
+                        <power/>
+                        <ci> LMCD1 </ci>
+                        <cn type="integer"> 3 </cn>
+                      </apply>
+                    </apply>
+                  </apply>
+                </apply>
+                <apply>
+                  <divide/>
+                  <apply>
+                    <times/>
+                    <cn> 0.5 </cn>
+                    <apply>
+                      <power/>
+                      <cn> 0.5 </cn>
+                      <cn type="integer"> 3 </cn>
+                    </apply>
+                  </apply>
+                  <apply>
+                    <plus/>
+                    <apply>
+                      <power/>
+                      <cn> 0.5 </cn>
+                      <cn type="integer"> 3 </cn>
+                    </apply>
+                    <apply>
+                      <power/>
+                      <ci> NANOG </ci>
+                      <cn type="integer"> 3 </cn>
+                    </apply>
+                  </apply>
+                </apply>
+              </apply>
+              <apply>
+                <divide/>
+                <apply>
+                  <times/>
+                  <cn> 0.5 </cn>
+                  <apply>
+                    <power/>
+                    <cn> 0.5 </cn>
+                    <cn type="integer"> 3 </cn>
+                  </apply>
+                </apply>
+                <apply>
+                  <plus/>
+                  <apply>
+                    <power/>
+                    <cn> 0.5 </cn>
+                    <cn type="integer"> 3 </cn>
+                  </apply>
+                  <apply>
+                    <power/>
+                    <ci> GATA4 </ci>
+                    <cn type="integer"> 3 </cn>
+                  </apply>
+                </apply>
+              </apply>
+            </apply>
+          </math>
+                </kineticLaw>
+      </reaction>
+      <reaction name="-E2F4" id="E2F4_synthesis">
+        <listOfModifiers>
+          <modifierSpeciesReference species="E2F4"/>
+        </listOfModifiers>
+        <listOfProducts>
+          <speciesReference species="E2F4"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <minus/>
+              <ci> E2F4 </ci>
+            </apply>
+          </math>
+                </kineticLaw>
+      </reaction>
+      <reaction name="-TDGF1+0.37*NANOG^3/(0.5^3+NANOG^3)+0.37*OCT4^3/(0.5^3+OCT4^3)+0.37*SOX2^3/(0.5^3+SOX2^3)" id="TDGF1_synthesis">
+        <listOfModifiers>
+          <modifierSpeciesReference species="TDGF1"/>
+          <modifierSpeciesReference species="NANOG"/>
+          <modifierSpeciesReference species="OCT4"/>
+          <modifierSpeciesReference species="SOX2"/>
+        </listOfModifiers>
+        <listOfProducts>
+          <speciesReference species="TDGF1"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <plus/>
+              <apply>
+                <plus/>
+                <apply>
+                  <plus/>
+                  <apply>
+                    <minus/>
+                    <ci> TDGF1 </ci>
+                  </apply>
+                  <apply>
+                    <divide/>
+                    <apply>
+                      <times/>
+                      <cn> 0.37 </cn>
+                      <apply>
+                        <power/>
+                        <ci> NANOG </ci>
+                        <cn type="integer"> 3 </cn>
+                      </apply>
+                    </apply>
+                    <apply>
+                      <plus/>
+                      <apply>
+                        <power/>
+                        <cn> 0.5 </cn>
+                        <cn type="integer"> 3 </cn>
+                      </apply>
+                      <apply>
+                        <power/>
+                        <ci> NANOG </ci>
+                        <cn type="integer"> 3 </cn>
+                      </apply>
+                    </apply>
+                  </apply>
+                </apply>
+                <apply>
+                  <divide/>
+                  <apply>
+                    <times/>
+                    <cn> 0.37 </cn>
+                    <apply>
+                      <power/>
+                      <ci> OCT4 </ci>
+                      <cn type="integer"> 3 </cn>
+                    </apply>
+                  </apply>
+                  <apply>
+                    <plus/>
+                    <apply>
+                      <power/>
+                      <cn> 0.5 </cn>
+                      <cn type="integer"> 3 </cn>
+                    </apply>
+                    <apply>
+                      <power/>
+                      <ci> OCT4 </ci>
+                      <cn type="integer"> 3 </cn>
+                    </apply>
+                  </apply>
+                </apply>
+              </apply>
+              <apply>
+                <divide/>
+                <apply>
+                  <times/>
+                  <cn> 0.37 </cn>
+                  <apply>
+                    <power/>
+                    <ci> SOX2 </ci>
+                    <cn type="integer"> 3 </cn>
+                  </apply>
+                </apply>
+                <apply>
+                  <plus/>
+                  <apply>
+                    <power/>
+                    <cn> 0.5 </cn>
+                    <cn type="integer"> 3 </cn>
+                  </apply>
+                  <apply>
+                    <power/>
+                    <ci> SOX2 </ci>
+                    <cn type="integer"> 3 </cn>
+                  </apply>
+                </apply>
+              </apply>
+            </apply>
+          </math>
+                </kineticLaw>
+      </reaction>
+      <reaction name="-FOXA2+0.37*FOXD3^3/(0.5^3+FOXD3^3)+0.37*FOXA2^3/(0.5^3+FOXA2^3)+0.37*SOX17^3/(0.5^3+SOX17^3)+0.5*0.5^3/(0.5^3+OCT4FOXD3^3)" id="FOXA2_synthesis">
+        <listOfModifiers>
+          <modifierSpeciesReference species="FOXA2"/>
+          <modifierSpeciesReference species="FOXD3"/>
+          <modifierSpeciesReference species="SOX17"/>
+          <modifierSpeciesReference species="OCT4FOXD3"/>
+        </listOfModifiers>
+        <listOfProducts>
+          <speciesReference species="FOXA2"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <plus/>
+              <apply>
+                <plus/>
+                <apply>
+                  <plus/>
+                  <apply>
+                    <plus/>
+                    <apply>
+                      <minus/>
+                      <ci> FOXA2 </ci>
+                    </apply>
+                    <apply>
+                      <divide/>
+                      <apply>
+                        <times/>
+                        <cn> 0.37 </cn>
+                        <apply>
+                          <power/>
+                          <ci> FOXD3 </ci>
+                          <cn type="integer"> 3 </cn>
+                        </apply>
+                      </apply>
+                      <apply>
+                        <plus/>
+                        <apply>
+                          <power/>
+                          <cn> 0.5 </cn>
+                          <cn type="integer"> 3 </cn>
+                        </apply>
+                        <apply>
+                          <power/>
+                          <ci> FOXD3 </ci>
+                          <cn type="integer"> 3 </cn>
+                        </apply>
+                      </apply>
+                    </apply>
+                  </apply>
+                  <apply>
+                    <divide/>
+                    <apply>
+                      <times/>
+                      <cn> 0.37 </cn>
+                      <apply>
+                        <power/>
+                        <ci> FOXA2 </ci>
+                        <cn type="integer"> 3 </cn>
+                      </apply>
+                    </apply>
+                    <apply>
+                      <plus/>
+                      <apply>
+                        <power/>
+                        <cn> 0.5 </cn>
+                        <cn type="integer"> 3 </cn>
+                      </apply>
+                      <apply>
+                        <power/>
+                        <ci> FOXA2 </ci>
+                        <cn type="integer"> 3 </cn>
+                      </apply>
+                    </apply>
+                  </apply>
+                </apply>
+                <apply>
+                  <divide/>
+                  <apply>
+                    <times/>
+                    <cn> 0.37 </cn>
+                    <apply>
+                      <power/>
+                      <ci> SOX17 </ci>
+                      <cn type="integer"> 3 </cn>
+                    </apply>
+                  </apply>
+                  <apply>
+                    <plus/>
+                    <apply>
+                      <power/>
+                      <cn> 0.5 </cn>
+                      <cn type="integer"> 3 </cn>
+                    </apply>
+                    <apply>
+                      <power/>
+                      <ci> SOX17 </ci>
+                      <cn type="integer"> 3 </cn>
+                    </apply>
+                  </apply>
+                </apply>
+              </apply>
+              <apply>
+                <divide/>
+                <apply>
+                  <times/>
+                  <cn> 0.5 </cn>
+                  <apply>
+                    <power/>
+                    <cn> 0.5 </cn>
+                    <cn type="integer"> 3 </cn>
+                  </apply>
+                </apply>
+                <apply>
+                  <plus/>
+                  <apply>
+                    <power/>
+                    <cn> 0.5 </cn>
+                    <cn type="integer"> 3 </cn>
+                  </apply>
+                  <apply>
+                    <power/>
+                    <ci> OCT4FOXD3 </ci>
+                    <cn type="integer"> 3 </cn>
+                  </apply>
+                </apply>
+              </apply>
+            </apply>
+          </math>
+                </kineticLaw>
+      </reaction>
+      <reaction name="-SOX17+0.5*0.5^3/(0.5^3+ZIC3^3)+0.5*0.5^3/(0.5^3+OCT4^3)" id="SOX17_synthesis">
+        <listOfModifiers>
+          <modifierSpeciesReference species="SOX17"/>
+          <modifierSpeciesReference species="ZIC3"/>
+          <modifierSpeciesReference species="OCT4"/>
+        </listOfModifiers>
+        <listOfProducts>
+          <speciesReference species="SOX17"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <plus/>
+              <apply>
+                <plus/>
+                <apply>
+                  <minus/>
+                  <ci> SOX17 </ci>
+                </apply>
+                <apply>
+                  <divide/>
+                  <apply>
+                    <times/>
+                    <cn> 0.5 </cn>
+                    <apply>
+                      <power/>
+                      <cn> 0.5 </cn>
+                      <cn type="integer"> 3 </cn>
+                    </apply>
+                  </apply>
+                  <apply>
+                    <plus/>
+                    <apply>
+                      <power/>
+                      <cn> 0.5 </cn>
+                      <cn type="integer"> 3 </cn>
+                    </apply>
+                    <apply>
+                      <power/>
+                      <ci> ZIC3 </ci>
+                      <cn type="integer"> 3 </cn>
+                    </apply>
+                  </apply>
+                </apply>
+              </apply>
+              <apply>
+                <divide/>
+                <apply>
+                  <times/>
+                  <cn> 0.5 </cn>
+                  <apply>
+                    <power/>
+                    <cn> 0.5 </cn>
+                    <cn type="integer"> 3 </cn>
+                  </apply>
+                </apply>
+                <apply>
+                  <plus/>
+                  <apply>
+                    <power/>
+                    <cn> 0.5 </cn>
+                    <cn type="integer"> 3 </cn>
+                  </apply>
+                  <apply>
+                    <power/>
+                    <ci> OCT4 </ci>
+                    <cn type="integer"> 3 </cn>
+                  </apply>
+                </apply>
+              </apply>
+            </apply>
+          </math>
+                </kineticLaw>
+      </reaction>
+      <reaction name="-OCT4FOXD3+0.37*OCT4^3/(0.5^3+OCT4^3)+0.37*FOXD3^3/(0.5^3+FOXD3^3)" id="OCT4FOXD3_synthesis">
+        <listOfModifiers>
+          <modifierSpeciesReference species="OCT4FOXD3"/>
+          <modifierSpeciesReference species="OCT4"/>
+          <modifierSpeciesReference species="FOXD3"/>
+        </listOfModifiers>
+        <listOfProducts>
+          <speciesReference species="OCT4FOXD3"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <plus/>
+              <apply>
+                <plus/>
+                <apply>
+                  <minus/>
+                  <ci> OCT4FOXD3 </ci>
+                </apply>
+                <apply>
+                  <divide/>
+                  <apply>
+                    <times/>
+                    <cn> 0.37 </cn>
+                    <apply>
+                      <power/>
+                      <ci> OCT4 </ci>
+                      <cn type="integer"> 3 </cn>
+                    </apply>
+                  </apply>
+                  <apply>
+                    <plus/>
+                    <apply>
+                      <power/>
+                      <cn> 0.5 </cn>
+                      <cn type="integer"> 3 </cn>
+                    </apply>
+                    <apply>
+                      <power/>
+                      <ci> OCT4 </ci>
+                      <cn type="integer"> 3 </cn>
+                    </apply>
+                  </apply>
+                </apply>
+              </apply>
+              <apply>
+                <divide/>
+                <apply>
+                  <times/>
+                  <cn> 0.37 </cn>
+                  <apply>
+                    <power/>
+                    <ci> FOXD3 </ci>
+                    <cn type="integer"> 3 </cn>
+                  </apply>
+                </apply>
+                <apply>
+                  <plus/>
+                  <apply>
+                    <power/>
+                    <cn> 0.5 </cn>
+                    <cn type="integer"> 3 </cn>
+                  </apply>
+                  <apply>
+                    <power/>
+                    <ci> FOXD3 </ci>
+                    <cn type="integer"> 3 </cn>
+                  </apply>
+                </apply>
+              </apply>
+            </apply>
+          </math>
+                </kineticLaw>
+      </reaction>
+      <reaction name="-FOXA1+0.37*FOXA1^3/(0.5^3+FOXA1^3)+0.37*FOXD3^3/(0.5^3+FOXD3^3)+0.5*0.5^3/(0.5^3+OCT4FOXD3^3)" id="FOXA1_synthesis">
+        <listOfModifiers>
+          <modifierSpeciesReference species="FOXA1"/>
+          <modifierSpeciesReference species="FOXD3"/>
+          <modifierSpeciesReference species="OCT4FOXD3"/>
+        </listOfModifiers>
+        <listOfProducts>
+          <speciesReference species="FOXA1"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <plus/>
+              <apply>
+                <plus/>
+                <apply>
+                  <plus/>
+                  <apply>
+                    <minus/>
+                    <ci> FOXA1 </ci>
+                  </apply>
+                  <apply>
+                    <divide/>
+                    <apply>
+                      <times/>
+                      <cn> 0.37 </cn>
+                      <apply>
+                        <power/>
+                        <ci> FOXA1 </ci>
+                        <cn type="integer"> 3 </cn>
+                      </apply>
+                    </apply>
+                    <apply>
+                      <plus/>
+                      <apply>
+                        <power/>
+                        <cn> 0.5 </cn>
+                        <cn type="integer"> 3 </cn>
+                      </apply>
+                      <apply>
+                        <power/>
+                        <ci> FOXA1 </ci>
+                        <cn type="integer"> 3 </cn>
+                      </apply>
+                    </apply>
+                  </apply>
+                </apply>
+                <apply>
+                  <divide/>
+                  <apply>
+                    <times/>
+                    <cn> 0.37 </cn>
+                    <apply>
+                      <power/>
+                      <ci> FOXD3 </ci>
+                      <cn type="integer"> 3 </cn>
+                    </apply>
+                  </apply>
+                  <apply>
+                    <plus/>
+                    <apply>
+                      <power/>
+                      <cn> 0.5 </cn>
+                      <cn type="integer"> 3 </cn>
+                    </apply>
+                    <apply>
+                      <power/>
+                      <ci> FOXD3 </ci>
+                      <cn type="integer"> 3 </cn>
+                    </apply>
+                  </apply>
+                </apply>
+              </apply>
+              <apply>
+                <divide/>
+                <apply>
+                  <times/>
+                  <cn> 0.5 </cn>
+                  <apply>
+                    <power/>
+                    <cn> 0.5 </cn>
+                    <cn type="integer"> 3 </cn>
+                  </apply>
+                </apply>
+                <apply>
+                  <plus/>
+                  <apply>
+                    <power/>
+                    <cn> 0.5 </cn>
+                    <cn type="integer"> 3 </cn>
+                  </apply>
+                  <apply>
+                    <power/>
+                    <ci> OCT4FOXD3 </ci>
+                    <cn type="integer"> 3 </cn>
+                  </apply>
+                </apply>
+              </apply>
+            </apply>
+          </math>
+                </kineticLaw>
+      </reaction>
+      <reaction name="-AFP+0.37*FOXA1^3/(0.5^3+FOXA1^3)+0.37*FOXA2^3/(0.5^3+FOXA2^3)" id="AFP_synthesis">
+        <listOfModifiers>
+          <modifierSpeciesReference species="AFP"/>
+          <modifierSpeciesReference species="FOXA1"/>
+          <modifierSpeciesReference species="FOXA2"/>
+        </listOfModifiers>
+        <listOfProducts>
+          <speciesReference species="AFP"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <plus/>
+              <apply>
+                <plus/>
+                <apply>
+                  <minus/>
+                  <ci> AFP </ci>
+                </apply>
+                <apply>
+                  <divide/>
+                  <apply>
+                    <times/>
+                    <cn> 0.37 </cn>
+                    <apply>
+                      <power/>
+                      <ci> FOXA1 </ci>
+                      <cn type="integer"> 3 </cn>
+                    </apply>
+                  </apply>
+                  <apply>
+                    <plus/>
+                    <apply>
+                      <power/>
+                      <cn> 0.5 </cn>
+                      <cn type="integer"> 3 </cn>
+                    </apply>
+                    <apply>
+                      <power/>
+                      <ci> FOXA1 </ci>
+                      <cn type="integer"> 3 </cn>
+                    </apply>
+                  </apply>
+                </apply>
+              </apply>
+              <apply>
+                <divide/>
+                <apply>
+                  <times/>
+                  <cn> 0.37 </cn>
+                  <apply>
+                    <power/>
+                    <ci> FOXA2 </ci>
+                    <cn type="integer"> 3 </cn>
+                  </apply>
+                </apply>
+                <apply>
+                  <plus/>
+                  <apply>
+                    <power/>
+                    <cn> 0.5 </cn>
+                    <cn type="integer"> 3 </cn>
+                  </apply>
+                  <apply>
+                    <power/>
+                    <ci> FOXA2 </ci>
+                    <cn type="integer"> 3 </cn>
+                  </apply>
+                </apply>
+              </apply>
+            </apply>
+          </math>
+                </kineticLaw>
+      </reaction>
+      <reaction name="-SUMO1+0.37*NANOG^3/(0.5^3+NANOG^3)+0.37*E2F4^3/(0.5^3+E2F4^3)" id="SUMO1_synthesis">
+        <listOfModifiers>
+          <modifierSpeciesReference species="SUMO1"/>
+          <modifierSpeciesReference species="NANOG"/>
+          <modifierSpeciesReference species="E2F4"/>
+        </listOfModifiers>
+        <listOfProducts>
+          <speciesReference species="SUMO1"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <plus/>
+              <apply>
+                <plus/>
+                <apply>
+                  <minus/>
+                  <ci> SUMO1 </ci>
+                </apply>
+                <apply>
+                  <divide/>
+                  <apply>
+                    <times/>
+                    <cn> 0.37 </cn>
+                    <apply>
+                      <power/>
+                      <ci> NANOG </ci>
+                      <cn type="integer"> 3 </cn>
+                    </apply>
+                  </apply>
+                  <apply>
+                    <plus/>
+                    <apply>
+                      <power/>
+                      <cn> 0.5 </cn>
+                      <cn type="integer"> 3 </cn>
+                    </apply>
+                    <apply>
+                      <power/>
+                      <ci> NANOG </ci>
+                      <cn type="integer"> 3 </cn>
+                    </apply>
+                  </apply>
+                </apply>
+              </apply>
+              <apply>
+                <divide/>
+                <apply>
+                  <times/>
+                  <cn> 0.37 </cn>
+                  <apply>
+                    <power/>
+                    <ci> E2F4 </ci>
+                    <cn type="integer"> 3 </cn>
+                  </apply>
+                </apply>
+                <apply>
+                  <plus/>
+                  <apply>
+                    <power/>
+                    <cn> 0.5 </cn>
+                    <cn type="integer"> 3 </cn>
+                  </apply>
+                  <apply>
+                    <power/>
+                    <ci> E2F4 </ci>
+                    <cn type="integer"> 3 </cn>
+                  </apply>
+                </apply>
+              </apply>
+            </apply>
+          </math>
+                </kineticLaw>
+      </reaction>
+      <reaction name="-GATA4+0.37*SUMO1^3/(0.5^3+SUMO1^3)+0.37*PIAS1^3/(0.5^3+PIAS1^3)+0.5*0.5^3/(0.5^3+NANOG^3)+0.5*0.5^3/(0.5^3+OCT4^3)" id="GATA4_synthesis">
+        <listOfModifiers>
+          <modifierSpeciesReference species="GATA4"/>
+          <modifierSpeciesReference species="SUMO1"/>
+          <modifierSpeciesReference species="PIAS1"/>
+          <modifierSpeciesReference species="NANOG"/>
+          <modifierSpeciesReference species="OCT4"/>
+        </listOfModifiers>
+        <listOfProducts>
+          <speciesReference species="GATA4"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <plus/>
+              <apply>
+                <plus/>
+                <apply>
+                  <plus/>
+                  <apply>
+                    <plus/>
+                    <apply>
+                      <minus/>
+                      <ci> GATA4 </ci>
+                    </apply>
+                    <apply>
+                      <divide/>
+                      <apply>
+                        <times/>
+                        <cn> 0.37 </cn>
+                        <apply>
+                          <power/>
+                          <ci> SUMO1 </ci>
+                          <cn type="integer"> 3 </cn>
+                        </apply>
+                      </apply>
+                      <apply>
+                        <plus/>
+                        <apply>
+                          <power/>
+                          <cn> 0.5 </cn>
+                          <cn type="integer"> 3 </cn>
+                        </apply>
+                        <apply>
+                          <power/>
+                          <ci> SUMO1 </ci>
+                          <cn type="integer"> 3 </cn>
+                        </apply>
+                      </apply>
+                    </apply>
+                  </apply>
+                  <apply>
+                    <divide/>
+                    <apply>
+                      <times/>
+                      <cn> 0.37 </cn>
+                      <apply>
+                        <power/>
+                        <ci> PIAS1 </ci>
+                        <cn type="integer"> 3 </cn>
+                      </apply>
+                    </apply>
+                    <apply>
+                      <plus/>
+                      <apply>
+                        <power/>
+                        <cn> 0.5 </cn>
+                        <cn type="integer"> 3 </cn>
+                      </apply>
+                      <apply>
+                        <power/>
+                        <ci> PIAS1 </ci>
+                        <cn type="integer"> 3 </cn>
+                      </apply>
+                    </apply>
+                  </apply>
+                </apply>
+                <apply>
+                  <divide/>
+                  <apply>
+                    <times/>
+                    <cn> 0.5 </cn>
+                    <apply>
+                      <power/>
+                      <cn> 0.5 </cn>
+                      <cn type="integer"> 3 </cn>
+                    </apply>
+                  </apply>
+                  <apply>
+                    <plus/>
+                    <apply>
+                      <power/>
+                      <cn> 0.5 </cn>
+                      <cn type="integer"> 3 </cn>
+                    </apply>
+                    <apply>
+                      <power/>
+                      <ci> NANOG </ci>
+                      <cn type="integer"> 3 </cn>
+                    </apply>
+                  </apply>
+                </apply>
+              </apply>
+              <apply>
+                <divide/>
+                <apply>
+                  <times/>
+                  <cn> 0.5 </cn>
+                  <apply>
+                    <power/>
+                    <cn> 0.5 </cn>
+                    <cn type="integer"> 3 </cn>
+                  </apply>
+                </apply>
+                <apply>
+                  <plus/>
+                  <apply>
+                    <power/>
+                    <cn> 0.5 </cn>
+                    <cn type="integer"> 3 </cn>
+                  </apply>
+                  <apply>
+                    <power/>
+                    <ci> OCT4 </ci>
+                    <cn type="integer"> 3 </cn>
+                  </apply>
+                </apply>
+              </apply>
+            </apply>
+          </math>
+                </kineticLaw>
+      </reaction>
+      <reaction name="-PIAS1+0.37*PIAS1^3/(0.5^3+PIAS1^3)+0.37*E2F4^3/(0.5^3+E2F4^3)" id="PIAS1_synthesis">
+        <listOfModifiers>
+          <modifierSpeciesReference species="PIAS1"/>
+          <modifierSpeciesReference species="E2F4"/>
+        </listOfModifiers>
+        <listOfProducts>
+          <speciesReference species="PIAS1"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <plus/>
+              <apply>
+                <plus/>
+                <apply>
+                  <minus/>
+                  <ci> PIAS1 </ci>
+                </apply>
+                <apply>
+                  <divide/>
+                  <apply>
+                    <times/>
+                    <cn> 0.37 </cn>
+                    <apply>
+                      <power/>
+                      <ci> PIAS1 </ci>
+                      <cn type="integer"> 3 </cn>
+                    </apply>
+                  </apply>
+                  <apply>
+                    <plus/>
+                    <apply>
+                      <power/>
+                      <cn> 0.5 </cn>
+                      <cn type="integer"> 3 </cn>
+                    </apply>
+                    <apply>
+                      <power/>
+                      <ci> PIAS1 </ci>
+                      <cn type="integer"> 3 </cn>
+                    </apply>
+                  </apply>
+                </apply>
+              </apply>
+              <apply>
+                <divide/>
+                <apply>
+                  <times/>
+                  <cn> 0.37 </cn>
+                  <apply>
+                    <power/>
+                    <ci> E2F4 </ci>
+                    <cn type="integer"> 3 </cn>
+                  </apply>
+                </apply>
+                <apply>
+                  <plus/>
+                  <apply>
+                    <power/>
+                    <cn> 0.5 </cn>
+                    <cn type="integer"> 3 </cn>
+                  </apply>
+                  <apply>
+                    <power/>
+                    <ci> E2F4 </ci>
+                    <cn type="integer"> 3 </cn>
+                  </apply>
+                </apply>
+              </apply>
+            </apply>
+          </math>
+                </kineticLaw>
+      </reaction>
+      <reaction name="-PRDM14+0.37*NANOG^3/(0.5^3+NANOG^3)+0.37*OCT4^3/(0.5^3+OCT4^3)+0.37*SOX2^3/(0.5^3+SOX2^3)" id="PRDM14_synthesis">
+        <listOfModifiers>
+          <modifierSpeciesReference species="PRDM14"/>
+          <modifierSpeciesReference species="NANOG"/>
+          <modifierSpeciesReference species="OCT4"/>
+          <modifierSpeciesReference species="SOX2"/>
+        </listOfModifiers>
+        <listOfProducts>
+          <speciesReference species="PRDM14"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <plus/>
+              <apply>
+                <plus/>
+                <apply>
+                  <plus/>
+                  <apply>
+                    <minus/>
+                    <ci> PRDM14 </ci>
+                  </apply>
+                  <apply>
+                    <divide/>
+                    <apply>
+                      <times/>
+                      <cn> 0.37 </cn>
+                      <apply>
+                        <power/>
+                        <ci> NANOG </ci>
+                        <cn type="integer"> 3 </cn>
+                      </apply>
+                    </apply>
+                    <apply>
+                      <plus/>
+                      <apply>
+                        <power/>
+                        <cn> 0.5 </cn>
+                        <cn type="integer"> 3 </cn>
+                      </apply>
+                      <apply>
+                        <power/>
+                        <ci> NANOG </ci>
+                        <cn type="integer"> 3 </cn>
+                      </apply>
+                    </apply>
+                  </apply>
+                </apply>
+                <apply>
+                  <divide/>
+                  <apply>
+                    <times/>
+                    <cn> 0.37 </cn>
+                    <apply>
+                      <power/>
+                      <ci> OCT4 </ci>
+                      <cn type="integer"> 3 </cn>
+                    </apply>
+                  </apply>
+                  <apply>
+                    <plus/>
+                    <apply>
+                      <power/>
+                      <cn> 0.5 </cn>
+                      <cn type="integer"> 3 </cn>
+                    </apply>
+                    <apply>
+                      <power/>
+                      <ci> OCT4 </ci>
+                      <cn type="integer"> 3 </cn>
+                    </apply>
+                  </apply>
+                </apply>
+              </apply>
+              <apply>
+                <divide/>
+                <apply>
+                  <times/>
+                  <cn> 0.37 </cn>
+                  <apply>
+                    <power/>
+                    <ci> SOX2 </ci>
+                    <cn type="integer"> 3 </cn>
+                  </apply>
+                </apply>
+                <apply>
+                  <plus/>
+                  <apply>
+                    <power/>
+                    <cn> 0.5 </cn>
+                    <cn type="integer"> 3 </cn>
+                  </apply>
+                  <apply>
+                    <power/>
+                    <ci> SOX2 </ci>
+                    <cn type="integer"> 3 </cn>
+                  </apply>
+                </apply>
+              </apply>
+            </apply>
+          </math>
+                </kineticLaw>
+      </reaction>
+      <reaction name="-LMCD1+0.37*NANOG^3/(0.5^3+NANOG^3)+0.5*0.5^3/(0.5^3+cAMP^3)" id="LMCD1_synthesis">
+        <listOfModifiers>
+          <modifierSpeciesReference species="LMCD1"/>
+          <modifierSpeciesReference species="NANOG"/>
+          <modifierSpeciesReference species="cAMP"/>
+        </listOfModifiers>
+        <listOfProducts>
+          <speciesReference species="LMCD1"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <plus/>
+              <apply>
+                <plus/>
+                <apply>
+                  <minus/>
+                  <ci> LMCD1 </ci>
+                </apply>
+                <apply>
+                  <divide/>
+                  <apply>
+                    <times/>
+                    <cn> 0.37 </cn>
+                    <apply>
+                      <power/>
+                      <ci> NANOG </ci>
+                      <cn type="integer"> 3 </cn>
+                    </apply>
+                  </apply>
+                  <apply>
+                    <plus/>
+                    <apply>
+                      <power/>
+                      <cn> 0.5 </cn>
+                      <cn type="integer"> 3 </cn>
+                    </apply>
+                    <apply>
+                      <power/>
+                      <ci> NANOG </ci>
+                      <cn type="integer"> 3 </cn>
+                    </apply>
+                  </apply>
+                </apply>
+              </apply>
+              <apply>
+                <divide/>
+                <apply>
+                  <times/>
+                  <cn> 0.5 </cn>
+                  <apply>
+                    <power/>
+                    <cn> 0.5 </cn>
+                    <cn type="integer"> 3 </cn>
+                  </apply>
+                </apply>
+                <apply>
+                  <plus/>
+                  <apply>
+                    <power/>
+                    <cn> 0.5 </cn>
+                    <cn type="integer"> 3 </cn>
+                  </apply>
+                  <apply>
+                    <power/>
+                    <ci> cAMP </ci>
+                    <cn type="integer"> 3 </cn>
+                  </apply>
+                </apply>
+              </apply>
+            </apply>
+          </math>
+                </kineticLaw>
+      </reaction>
+      <reaction name="-T+0.5*0.5^3/(0.5^3+OCT4^3)+0.5*0.5^3/(0.5^3+NANOG^3)+0.5*0.5^3/(0.5^3+PRDM14^3)+0.5*0.5^3/(0.5^3+E2F4^3)" id="T_synthesis">
+        <listOfModifiers>
+          <modifierSpeciesReference species="T"/>
+          <modifierSpeciesReference species="OCT4"/>
+          <modifierSpeciesReference species="NANOG"/>
+          <modifierSpeciesReference species="PRDM14"/>
+          <modifierSpeciesReference species="E2F4"/>
+        </listOfModifiers>
+        <listOfProducts>
+          <speciesReference species="T"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <plus/>
+              <apply>
+                <plus/>
+                <apply>
+                  <plus/>
+                  <apply>
+                    <plus/>
+                    <apply>
+                      <minus/>
+                      <ci> T </ci>
+                    </apply>
+                    <apply>
+                      <divide/>
+                      <apply>
+                        <times/>
+                        <cn> 0.5 </cn>
+                        <apply>
+                          <power/>
+                          <cn> 0.5 </cn>
+                          <cn type="integer"> 3 </cn>
+                        </apply>
+                      </apply>
+                      <apply>
+                        <plus/>
+                        <apply>
+                          <power/>
+                          <cn> 0.5 </cn>
+                          <cn type="integer"> 3 </cn>
+                        </apply>
+                        <apply>
+                          <power/>
+                          <ci> OCT4 </ci>
+                          <cn type="integer"> 3 </cn>
+                        </apply>
+                      </apply>
+                    </apply>
+                  </apply>
+                  <apply>
+                    <divide/>
+                    <apply>
+                      <times/>
+                      <cn> 0.5 </cn>
+                      <apply>
+                        <power/>
+                        <cn> 0.5 </cn>
+                        <cn type="integer"> 3 </cn>
+                      </apply>
+                    </apply>
+                    <apply>
+                      <plus/>
+                      <apply>
+                        <power/>
+                        <cn> 0.5 </cn>
+                        <cn type="integer"> 3 </cn>
+                      </apply>
+                      <apply>
+                        <power/>
+                        <ci> NANOG </ci>
+                        <cn type="integer"> 3 </cn>
+                      </apply>
+                    </apply>
+                  </apply>
+                </apply>
+                <apply>
+                  <divide/>
+                  <apply>
+                    <times/>
+                    <cn> 0.5 </cn>
+                    <apply>
+                      <power/>
+                      <cn> 0.5 </cn>
+                      <cn type="integer"> 3 </cn>
+                    </apply>
+                  </apply>
+                  <apply>
+                    <plus/>
+                    <apply>
+                      <power/>
+                      <cn> 0.5 </cn>
+                      <cn type="integer"> 3 </cn>
+                    </apply>
+                    <apply>
+                      <power/>
+                      <ci> PRDM14 </ci>
+                      <cn type="integer"> 3 </cn>
+                    </apply>
+                  </apply>
+                </apply>
+              </apply>
+              <apply>
+                <divide/>
+                <apply>
+                  <times/>
+                  <cn> 0.5 </cn>
+                  <apply>
+                    <power/>
+                    <cn> 0.5 </cn>
+                    <cn type="integer"> 3 </cn>
+                  </apply>
+                </apply>
+                <apply>
+                  <plus/>
+                  <apply>
+                    <power/>
+                    <cn> 0.5 </cn>
+                    <cn type="integer"> 3 </cn>
+                  </apply>
+                  <apply>
+                    <power/>
+                    <ci> E2F4 </ci>
+                    <cn type="integer"> 3 </cn>
+                  </apply>
+                </apply>
+              </apply>
+            </apply>
+          </math>
+                </kineticLaw>
+      </reaction>
+      <reaction name="-CSH1+0.5*0.5^3/(0.5^3+PRDM14^3)" id="CSH1_synthesis">
+        <listOfModifiers>
+          <modifierSpeciesReference species="CSH1"/>
+          <modifierSpeciesReference species="PRDM14"/>
+        </listOfModifiers>
+        <listOfProducts>
+          <speciesReference species="CSH1"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <plus/>
+              <apply>
+                <minus/>
+                <ci> CSH1 </ci>
+              </apply>
+              <apply>
+                <divide/>
+                <apply>
+                  <times/>
+                  <cn> 0.5 </cn>
+                  <apply>
+                    <power/>
+                    <cn> 0.5 </cn>
+                    <cn type="integer"> 3 </cn>
+                  </apply>
+                </apply>
+                <apply>
+                  <plus/>
+                  <apply>
+                    <power/>
+                    <cn> 0.5 </cn>
+                    <cn type="integer"> 3 </cn>
+                  </apply>
+                  <apply>
+                    <power/>
+                    <ci> PRDM14 </ci>
+                    <cn type="integer"> 3 </cn>
+                  </apply>
+                </apply>
+              </apply>
+            </apply>
+          </math>
+                </kineticLaw>
+      </reaction>
+      <reaction name="-GATA2+0.5*0.5^3/(0.5^3+SOX2^3)+0.5*0.5^3/(0.5^3+NANOG^3)+0.5*0.5^3/(0.5^3+PIASy^3)+0.5*0.5^3/(0.5^3+SUMO1^3)" id="GATA2_synthesis">
+        <listOfModifiers>
+          <modifierSpeciesReference species="GATA2"/>
+          <modifierSpeciesReference species="SOX2"/>
+          <modifierSpeciesReference species="NANOG"/>
+          <modifierSpeciesReference species="PIASy"/>
+          <modifierSpeciesReference species="SUMO1"/>
+        </listOfModifiers>
+        <listOfProducts>
+          <speciesReference species="GATA2"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <plus/>
+              <apply>
+                <plus/>
+                <apply>
+                  <plus/>
+                  <apply>
+                    <plus/>
+                    <apply>
+                      <minus/>
+                      <ci> GATA2 </ci>
+                    </apply>
+                    <apply>
+                      <divide/>
+                      <apply>
+                        <times/>
+                        <cn> 0.5 </cn>
+                        <apply>
+                          <power/>
+                          <cn> 0.5 </cn>
+                          <cn type="integer"> 3 </cn>
+                        </apply>
+                      </apply>
+                      <apply>
+                        <plus/>
+                        <apply>
+                          <power/>
+                          <cn> 0.5 </cn>
+                          <cn type="integer"> 3 </cn>
+                        </apply>
+                        <apply>
+                          <power/>
+                          <ci> SOX2 </ci>
+                          <cn type="integer"> 3 </cn>
+                        </apply>
+                      </apply>
+                    </apply>
+                  </apply>
+                  <apply>
+                    <divide/>
+                    <apply>
+                      <times/>
+                      <cn> 0.5 </cn>
+                      <apply>
+                        <power/>
+                        <cn> 0.5 </cn>
+                        <cn type="integer"> 3 </cn>
+                      </apply>
+                    </apply>
+                    <apply>
+                      <plus/>
+                      <apply>
+                        <power/>
+                        <cn> 0.5 </cn>
+                        <cn type="integer"> 3 </cn>
+                      </apply>
+                      <apply>
+                        <power/>
+                        <ci> NANOG </ci>
+                        <cn type="integer"> 3 </cn>
+                      </apply>
+                    </apply>
+                  </apply>
+                </apply>
+                <apply>
+                  <divide/>
+                  <apply>
+                    <times/>
+                    <cn> 0.5 </cn>
+                    <apply>
+                      <power/>
+                      <cn> 0.5 </cn>
+                      <cn type="integer"> 3 </cn>
+                    </apply>
+                  </apply>
+                  <apply>
+                    <plus/>
+                    <apply>
+                      <power/>
+                      <cn> 0.5 </cn>
+                      <cn type="integer"> 3 </cn>
+                    </apply>
+                    <apply>
+                      <power/>
+                      <ci> PIASy </ci>
+                      <cn type="integer"> 3 </cn>
+                    </apply>
+                  </apply>
+                </apply>
+              </apply>
+              <apply>
+                <divide/>
+                <apply>
+                  <times/>
+                  <cn> 0.5 </cn>
+                  <apply>
+                    <power/>
+                    <cn> 0.5 </cn>
+                    <cn type="integer"> 3 </cn>
+                  </apply>
+                </apply>
+                <apply>
+                  <plus/>
+                  <apply>
+                    <power/>
+                    <cn> 0.5 </cn>
+                    <cn type="integer"> 3 </cn>
+                  </apply>
+                  <apply>
+                    <power/>
+                    <ci> SUMO1 </ci>
+                    <cn type="integer"> 3 </cn>
+                  </apply>
+                </apply>
+              </apply>
+            </apply>
+          </math>
+                </kineticLaw>
+      </reaction>
+      <reaction name="-PIASy+0.37*PIAS1^3/(0.5^3+PIAS1^3)" id="PIASy_synthesis">
+        <listOfModifiers>
+          <modifierSpeciesReference species="PIASy"/>
+          <modifierSpeciesReference species="PIAS1"/>
+        </listOfModifiers>
+        <listOfProducts>
+          <speciesReference species="PIASy"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <plus/>
+              <apply>
+                <minus/>
+                <ci> PIASy </ci>
+              </apply>
+              <apply>
+                <divide/>
+                <apply>
+                  <times/>
+                  <cn> 0.37 </cn>
+                  <apply>
+                    <power/>
+                    <ci> PIAS1 </ci>
+                    <cn type="integer"> 3 </cn>
+                  </apply>
+                </apply>
+                <apply>
+                  <plus/>
+                  <apply>
+                    <power/>
+                    <cn> 0.5 </cn>
+                    <cn type="integer"> 3 </cn>
+                  </apply>
+                  <apply>
+                    <power/>
+                    <ci> PIAS1 </ci>
+                    <cn type="integer"> 3 </cn>
+                  </apply>
+                </apply>
+              </apply>
+            </apply>
+          </math>
+                </kineticLaw>
+      </reaction>
+      <reaction name="-GATA3+0.5*0.5^3/(0.5^3+NANOG^3)" id="GATA3_synthesis">
+        <listOfModifiers>
+          <modifierSpeciesReference species="GATA3"/>
+          <modifierSpeciesReference species="NANOG"/>
+        </listOfModifiers>
+        <listOfProducts>
+          <speciesReference species="GATA3"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <plus/>
+              <apply>
+                <minus/>
+                <ci> GATA3 </ci>
+              </apply>
+              <apply>
+                <divide/>
+                <apply>
+                  <times/>
+                  <cn> 0.5 </cn>
+                  <apply>
+                    <power/>
+                    <cn> 0.5 </cn>
+                    <cn type="integer"> 3 </cn>
+                  </apply>
+                </apply>
+                <apply>
+                  <plus/>
+                  <apply>
+                    <power/>
+                    <cn> 0.5 </cn>
+                    <cn type="integer"> 3 </cn>
+                  </apply>
+                  <apply>
+                    <power/>
+                    <ci> NANOG </ci>
+                    <cn type="integer"> 3 </cn>
+                  </apply>
+                </apply>
+              </apply>
+            </apply>
+          </math>
+                </kineticLaw>
+      </reaction>
+      <reaction name="-hCGa+0.37*GATA2^3/(0.5^3+GATA2^3)+0.37*GATA3^3/(0.5^3+GATA3^3)+0.37*cAMP^3/(0.5^3+cAMP^3)+0.5*0.5^3/(0.5^3+OCT4^3)" id="hCGa_synthesis">
+        <listOfModifiers>
+          <modifierSpeciesReference species="hCGa"/>
+          <modifierSpeciesReference species="GATA2"/>
+          <modifierSpeciesReference species="GATA3"/>
+          <modifierSpeciesReference species="cAMP"/>
+          <modifierSpeciesReference species="OCT4"/>
+        </listOfModifiers>
+        <listOfProducts>
+          <speciesReference species="hCGa"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <plus/>
+              <apply>
+                <plus/>
+                <apply>
+                  <plus/>
+                  <apply>
+                    <plus/>
+                    <apply>
+                      <minus/>
+                      <ci> hCGa </ci>
+                    </apply>
+                    <apply>
+                      <divide/>
+                      <apply>
+                        <times/>
+                        <cn> 0.37 </cn>
+                        <apply>
+                          <power/>
+                          <ci> GATA2 </ci>
+                          <cn type="integer"> 3 </cn>
+                        </apply>
+                      </apply>
+                      <apply>
+                        <plus/>
+                        <apply>
+                          <power/>
+                          <cn> 0.5 </cn>
+                          <cn type="integer"> 3 </cn>
+                        </apply>
+                        <apply>
+                          <power/>
+                          <ci> GATA2 </ci>
+                          <cn type="integer"> 3 </cn>
+                        </apply>
+                      </apply>
+                    </apply>
+                  </apply>
+                  <apply>
+                    <divide/>
+                    <apply>
+                      <times/>
+                      <cn> 0.37 </cn>
+                      <apply>
+                        <power/>
+                        <ci> GATA3 </ci>
+                        <cn type="integer"> 3 </cn>
+                      </apply>
+                    </apply>
+                    <apply>
+                      <plus/>
+                      <apply>
+                        <power/>
+                        <cn> 0.5 </cn>
+                        <cn type="integer"> 3 </cn>
+                      </apply>
+                      <apply>
+                        <power/>
+                        <ci> GATA3 </ci>
+                        <cn type="integer"> 3 </cn>
+                      </apply>
+                    </apply>
+                  </apply>
+                </apply>
+                <apply>
+                  <divide/>
+                  <apply>
+                    <times/>
+                    <cn> 0.37 </cn>
+                    <apply>
+                      <power/>
+                      <ci> cAMP </ci>
+                      <cn type="integer"> 3 </cn>
+                    </apply>
+                  </apply>
+                  <apply>
+                    <plus/>
+                    <apply>
+                      <power/>
+                      <cn> 0.5 </cn>
+                      <cn type="integer"> 3 </cn>
+                    </apply>
+                    <apply>
+                      <power/>
+                      <ci> cAMP </ci>
+                      <cn type="integer"> 3 </cn>
+                    </apply>
+                  </apply>
+                </apply>
+              </apply>
+              <apply>
+                <divide/>
+                <apply>
+                  <times/>
+                  <cn> 0.5 </cn>
+                  <apply>
+                    <power/>
+                    <cn> 0.5 </cn>
+                    <cn type="integer"> 3 </cn>
+                  </apply>
+                </apply>
+                <apply>
+                  <plus/>
+                  <apply>
+                    <power/>
+                    <cn> 0.5 </cn>
+                    <cn type="integer"> 3 </cn>
+                  </apply>
+                  <apply>
+                    <power/>
+                    <ci> OCT4 </ci>
+                    <cn type="integer"> 3 </cn>
+                  </apply>
+                </apply>
+              </apply>
+            </apply>
+          </math>
+                </kineticLaw>
+      </reaction>
+      <reaction name="-cAMP" id="cAMP_synthesis">
+        <listOfModifiers>
+          <modifierSpeciesReference species="cAMP"/>
+        </listOfModifiers>
+        <listOfProducts>
+          <speciesReference species="cAMP"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <minus/>
+              <ci> cAMP </ci>
+            </apply>
+          </math>
+                </kineticLaw>
+      </reaction>
+      <reaction name="-SP1+0.37*E2F4^3/(0.5^3+E2F4^3)+0.37*SP1^3/(0.5^3+SP1^3)+0.37*NFYA^3/(0.5^3+NFYA^3)+0.37*CEBP^3/(0.5^3+CEBP^3)+0.5*0.5^3/(0.5^3+MYCSP1^3)+0.5*0.5^3/(0.5^3+SP3^3)" id="SP1_synthesis">
+        <listOfModifiers>
+          <modifierSpeciesReference species="SP1"/>
+          <modifierSpeciesReference species="E2F4"/>
+          <modifierSpeciesReference species="NFYA"/>
+          <modifierSpeciesReference species="CEBP"/>
+          <modifierSpeciesReference species="MYCSP1"/>
+          <modifierSpeciesReference species="SP3"/>
+        </listOfModifiers>
+        <listOfProducts>
+          <speciesReference species="SP1"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <plus/>
+              <apply>
+                <plus/>
+                <apply>
+                  <plus/>
+                  <apply>
+                    <plus/>
+                    <apply>
+                      <plus/>
+                      <apply>
+                        <plus/>
+                        <apply>
+                          <minus/>
+                          <ci> SP1 </ci>
+                        </apply>
+                        <apply>
+                          <divide/>
+                          <apply>
+                            <times/>
+                            <cn> 0.37 </cn>
+                            <apply>
+                              <power/>
+                              <ci> E2F4 </ci>
+                              <cn type="integer"> 3 </cn>
+                            </apply>
+                          </apply>
+                          <apply>
+                            <plus/>
+                            <apply>
+                              <power/>
+                              <cn> 0.5 </cn>
+                              <cn type="integer"> 3 </cn>
+                            </apply>
+                            <apply>
+                              <power/>
+                              <ci> E2F4 </ci>
+                              <cn type="integer"> 3 </cn>
+                            </apply>
+                          </apply>
+                        </apply>
+                      </apply>
+                      <apply>
+                        <divide/>
+                        <apply>
+                          <times/>
+                          <cn> 0.37 </cn>
+                          <apply>
+                            <power/>
+                            <ci> SP1 </ci>
+                            <cn type="integer"> 3 </cn>
+                          </apply>
+                        </apply>
+                        <apply>
+                          <plus/>
+                          <apply>
+                            <power/>
+                            <cn> 0.5 </cn>
+                            <cn type="integer"> 3 </cn>
+                          </apply>
+                          <apply>
+                            <power/>
+                            <ci> SP1 </ci>
+                            <cn type="integer"> 3 </cn>
+                          </apply>
+                        </apply>
+                      </apply>
+                    </apply>
+                    <apply>
+                      <divide/>
+                      <apply>
+                        <times/>
+                        <cn> 0.37 </cn>
+                        <apply>
+                          <power/>
+                          <ci> NFYA </ci>
+                          <cn type="integer"> 3 </cn>
+                        </apply>
+                      </apply>
+                      <apply>
+                        <plus/>
+                        <apply>
+                          <power/>
+                          <cn> 0.5 </cn>
+                          <cn type="integer"> 3 </cn>
+                        </apply>
+                        <apply>
+                          <power/>
+                          <ci> NFYA </ci>
+                          <cn type="integer"> 3 </cn>
+                        </apply>
+                      </apply>
+                    </apply>
+                  </apply>
+                  <apply>
+                    <divide/>
+                    <apply>
+                      <times/>
+                      <cn> 0.37 </cn>
+                      <apply>
+                        <power/>
+                        <ci> CEBP </ci>
+                        <cn type="integer"> 3 </cn>
+                      </apply>
+                    </apply>
+                    <apply>
+                      <plus/>
+                      <apply>
+                        <power/>
+                        <cn> 0.5 </cn>
+                        <cn type="integer"> 3 </cn>
+                      </apply>
+                      <apply>
+                        <power/>
+                        <ci> CEBP </ci>
+                        <cn type="integer"> 3 </cn>
+                      </apply>
+                    </apply>
+                  </apply>
+                </apply>
+                <apply>
+                  <divide/>
+                  <apply>
+                    <times/>
+                    <cn> 0.5 </cn>
+                    <apply>
+                      <power/>
+                      <cn> 0.5 </cn>
+                      <cn type="integer"> 3 </cn>
+                    </apply>
+                  </apply>
+                  <apply>
+                    <plus/>
+                    <apply>
+                      <power/>
+                      <cn> 0.5 </cn>
+                      <cn type="integer"> 3 </cn>
+                    </apply>
+                    <apply>
+                      <power/>
+                      <ci> MYCSP1 </ci>
+                      <cn type="integer"> 3 </cn>
+                    </apply>
+                  </apply>
+                </apply>
+              </apply>
+              <apply>
+                <divide/>
+                <apply>
+                  <times/>
+                  <cn> 0.5 </cn>
+                  <apply>
+                    <power/>
+                    <cn> 0.5 </cn>
+                    <cn type="integer"> 3 </cn>
+                  </apply>
+                </apply>
+                <apply>
+                  <plus/>
+                  <apply>
+                    <power/>
+                    <cn> 0.5 </cn>
+                    <cn type="integer"> 3 </cn>
+                  </apply>
+                  <apply>
+                    <power/>
+                    <ci> SP3 </ci>
+                    <cn type="integer"> 3 </cn>
+                  </apply>
+                </apply>
+              </apply>
+            </apply>
+          </math>
+                </kineticLaw>
+      </reaction>
+      <reaction name="-hCGb+0.37*SP1^3/(0.5^3+SP1^3)+0.37*SP3^3/(0.5^3+SP3^3)+0.37*cAMP^3/(0.5^3+cAMP^3)+0.5*0.5^3/(0.5^3+OCT4^3)" id="hCGb_synthesis">
+        <listOfModifiers>
+          <modifierSpeciesReference species="hCGb"/>
+          <modifierSpeciesReference species="SP1"/>
+          <modifierSpeciesReference species="SP3"/>
+          <modifierSpeciesReference species="cAMP"/>
+          <modifierSpeciesReference species="OCT4"/>
+        </listOfModifiers>
+        <listOfProducts>
+          <speciesReference species="hCGb"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <plus/>
+              <apply>
+                <plus/>
+                <apply>
+                  <plus/>
+                  <apply>
+                    <plus/>
+                    <apply>
+                      <minus/>
+                      <ci> hCGb </ci>
+                    </apply>
+                    <apply>
+                      <divide/>
+                      <apply>
+                        <times/>
+                        <cn> 0.37 </cn>
+                        <apply>
+                          <power/>
+                          <ci> SP1 </ci>
+                          <cn type="integer"> 3 </cn>
+                        </apply>
+                      </apply>
+                      <apply>
+                        <plus/>
+                        <apply>
+                          <power/>
+                          <cn> 0.5 </cn>
+                          <cn type="integer"> 3 </cn>
+                        </apply>
+                        <apply>
+                          <power/>
+                          <ci> SP1 </ci>
+                          <cn type="integer"> 3 </cn>
+                        </apply>
+                      </apply>
+                    </apply>
+                  </apply>
+                  <apply>
+                    <divide/>
+                    <apply>
+                      <times/>
+                      <cn> 0.37 </cn>
+                      <apply>
+                        <power/>
+                        <ci> SP3 </ci>
+                        <cn type="integer"> 3 </cn>
+                      </apply>
+                    </apply>
+                    <apply>
+                      <plus/>
+                      <apply>
+                        <power/>
+                        <cn> 0.5 </cn>
+                        <cn type="integer"> 3 </cn>
+                      </apply>
+                      <apply>
+                        <power/>
+                        <ci> SP3 </ci>
+                        <cn type="integer"> 3 </cn>
+                      </apply>
+                    </apply>
+                  </apply>
+                </apply>
+                <apply>
+                  <divide/>
+                  <apply>
+                    <times/>
+                    <cn> 0.37 </cn>
+                    <apply>
+                      <power/>
+                      <ci> cAMP </ci>
+                      <cn type="integer"> 3 </cn>
+                    </apply>
+                  </apply>
+                  <apply>
+                    <plus/>
+                    <apply>
+                      <power/>
+                      <cn> 0.5 </cn>
+                      <cn type="integer"> 3 </cn>
+                    </apply>
+                    <apply>
+                      <power/>
+                      <ci> cAMP </ci>
+                      <cn type="integer"> 3 </cn>
+                    </apply>
+                  </apply>
+                </apply>
+              </apply>
+              <apply>
+                <divide/>
+                <apply>
+                  <times/>
+                  <cn> 0.5 </cn>
+                  <apply>
+                    <power/>
+                    <cn> 0.5 </cn>
+                    <cn type="integer"> 3 </cn>
+                  </apply>
+                </apply>
+                <apply>
+                  <plus/>
+                  <apply>
+                    <power/>
+                    <cn> 0.5 </cn>
+                    <cn type="integer"> 3 </cn>
+                  </apply>
+                  <apply>
+                    <power/>
+                    <ci> OCT4 </ci>
+                    <cn type="integer"> 3 </cn>
+                  </apply>
+                </apply>
+              </apply>
+            </apply>
+          </math>
+                </kineticLaw>
+      </reaction>
+      <reaction name="-SP3+0.5*0.5^3/(0.5^3+PIAS1^3)+0.5*0.5^3/(0.5^3+SUMO1^3)" id="SP3_synthesis">
+        <listOfModifiers>
+          <modifierSpeciesReference species="SP3"/>
+          <modifierSpeciesReference species="PIAS1"/>
+          <modifierSpeciesReference species="SUMO1"/>
+        </listOfModifiers>
+        <listOfProducts>
+          <speciesReference species="SP3"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <plus/>
+              <apply>
+                <plus/>
+                <apply>
+                  <minus/>
+                  <ci> SP3 </ci>
+                </apply>
+                <apply>
+                  <divide/>
+                  <apply>
+                    <times/>
+                    <cn> 0.5 </cn>
+                    <apply>
+                      <power/>
+                      <cn> 0.5 </cn>
+                      <cn type="integer"> 3 </cn>
+                    </apply>
+                  </apply>
+                  <apply>
+                    <plus/>
+                    <apply>
+                      <power/>
+                      <cn> 0.5 </cn>
+                      <cn type="integer"> 3 </cn>
+                    </apply>
+                    <apply>
+                      <power/>
+                      <ci> PIAS1 </ci>
+                      <cn type="integer"> 3 </cn>
+                    </apply>
+                  </apply>
+                </apply>
+              </apply>
+              <apply>
+                <divide/>
+                <apply>
+                  <times/>
+                  <cn> 0.5 </cn>
+                  <apply>
+                    <power/>
+                    <cn> 0.5 </cn>
+                    <cn type="integer"> 3 </cn>
+                  </apply>
+                </apply>
+                <apply>
+                  <plus/>
+                  <apply>
+                    <power/>
+                    <cn> 0.5 </cn>
+                    <cn type="integer"> 3 </cn>
+                  </apply>
+                  <apply>
+                    <power/>
+                    <ci> SUMO1 </ci>
+                    <cn type="integer"> 3 </cn>
+                  </apply>
+                </apply>
+              </apply>
+            </apply>
+          </math>
+                </kineticLaw>
+      </reaction>
+      <reaction name="-BMP2K+0.37*HNF4A^3/(0.5^3+HNF4A^3)" id="BMP2K_synthesis">
+        <listOfModifiers>
+          <modifierSpeciesReference species="BMP2K"/>
+          <modifierSpeciesReference species="HNF4A"/>
+        </listOfModifiers>
+        <listOfProducts>
+          <speciesReference species="BMP2K"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <plus/>
+              <apply>
+                <minus/>
+                <ci> BMP2K </ci>
+              </apply>
+              <apply>
+                <divide/>
+                <apply>
+                  <times/>
+                  <cn> 0.37 </cn>
+                  <apply>
+                    <power/>
+                    <ci> HNF4A </ci>
+                    <cn type="integer"> 3 </cn>
+                  </apply>
+                </apply>
+                <apply>
+                  <plus/>
+                  <apply>
+                    <power/>
+                    <cn> 0.5 </cn>
+                    <cn type="integer"> 3 </cn>
+                  </apply>
+                  <apply>
+                    <power/>
+                    <ci> HNF4A </ci>
+                    <cn type="integer"> 3 </cn>
+                  </apply>
+                </apply>
+              </apply>
+            </apply>
+          </math>
+                </kineticLaw>
+      </reaction>
+      <reaction name="-BMP2+0.37*BMP2K^3/(0.5^3+BMP2K^3)+0.5*0.5^3/(0.5^3+SOX2^3)+0.5*0.5^3/(0.5^3+NANOG^3)" id="BMP2_synthesis">
+        <listOfModifiers>
+          <modifierSpeciesReference species="BMP2"/>
+          <modifierSpeciesReference species="BMP2K"/>
+          <modifierSpeciesReference species="SOX2"/>
+          <modifierSpeciesReference species="NANOG"/>
+        </listOfModifiers>
+        <listOfProducts>
+          <speciesReference species="BMP2"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <plus/>
+              <apply>
+                <plus/>
+                <apply>
+                  <plus/>
+                  <apply>
+                    <times/>
+                    <apply>
+                      <minus/>
+                      <cn type="integer"> 1 </cn>
+                    </apply>
+                    <ci> BMP2 </ci>
+                  </apply>
+                  <apply>
+                    <divide/>
+                    <apply>
+                      <times/>
+                      <cn> 0.37 </cn>
+                      <apply>
+                        <power/>
+                        <ci> BMP2K </ci>
+                        <cn type="integer"> 3 </cn>
+                      </apply>
+                    </apply>
+                    <apply>
+                      <plus/>
+                      <apply>
+                        <power/>
+                        <cn> 0.5 </cn>
+                        <cn type="integer"> 3 </cn>
+                      </apply>
+                      <apply>
+                        <power/>
+                        <ci> BMP2K </ci>
+                        <cn type="integer"> 3 </cn>
+                      </apply>
+                    </apply>
+                  </apply>
+                </apply>
+                <apply>
+                  <divide/>
+                  <apply>
+                    <times/>
+                    <cn> 0.5 </cn>
+                    <apply>
+                      <power/>
+                      <cn> 0.5 </cn>
+                      <cn type="integer"> 3 </cn>
+                    </apply>
+                  </apply>
+                  <apply>
+                    <plus/>
+                    <apply>
+                      <power/>
+                      <cn> 0.5 </cn>
+                      <cn type="integer"> 3 </cn>
+                    </apply>
+                    <apply>
+                      <power/>
+                      <ci> SOX2 </ci>
+                      <cn type="integer"> 3 </cn>
+                    </apply>
+                  </apply>
+                </apply>
+              </apply>
+              <apply>
+                <divide/>
+                <apply>
+                  <times/>
+                  <cn> 0.5 </cn>
+                  <apply>
+                    <power/>
+                    <cn> 0.5 </cn>
+                    <cn type="integer"> 3 </cn>
+                  </apply>
+                </apply>
+                <apply>
+                  <plus/>
+                  <apply>
+                    <power/>
+                    <cn> 0.5 </cn>
+                    <cn type="integer"> 3 </cn>
+                  </apply>
+                  <apply>
+                    <power/>
+                    <ci> NANOG </ci>
+                    <cn type="integer"> 3 </cn>
+                  </apply>
+                </apply>
+              </apply>
+            </apply>
+          </math>
+                </kineticLaw>
+      </reaction>
+      <reaction name="-HNF4A+0.37*GATA6^3/(0.5^3+GATA6^3)+0.37*bCAT^3/(0.5^3+bCAT^3)" id="HNF4A_synthesis">
+        <listOfModifiers>
+          <modifierSpeciesReference species="HNF4A"/>
+          <modifierSpeciesReference species="GATA6"/>
+          <modifierSpeciesReference species="bCAT"/>
+        </listOfModifiers>
+        <listOfProducts>
+          <speciesReference species="HNF4A"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <plus/>
+              <apply>
+                <plus/>
+                <apply>
+                  <minus/>
+                  <ci> HNF4A </ci>
+                </apply>
+                <apply>
+                  <divide/>
+                  <apply>
+                    <times/>
+                    <cn> 0.37 </cn>
+                    <apply>
+                      <power/>
+                      <ci> GATA6 </ci>
+                      <cn type="integer"> 3 </cn>
+                    </apply>
+                  </apply>
+                  <apply>
+                    <plus/>
+                    <apply>
+                      <power/>
+                      <cn> 0.5 </cn>
+                      <cn type="integer"> 3 </cn>
+                    </apply>
+                    <apply>
+                      <power/>
+                      <ci> GATA6 </ci>
+                      <cn type="integer"> 3 </cn>
+                    </apply>
+                  </apply>
+                </apply>
+              </apply>
+              <apply>
+                <divide/>
+                <apply>
+                  <times/>
+                  <cn> 0.37 </cn>
+                  <apply>
+                    <power/>
+                    <ci> bCAT </ci>
+                    <cn type="integer"> 3 </cn>
+                  </apply>
+                </apply>
+                <apply>
+                  <plus/>
+                  <apply>
+                    <power/>
+                    <cn> 0.5 </cn>
+                    <cn type="integer"> 3 </cn>
+                  </apply>
+                  <apply>
+                    <power/>
+                    <ci> bCAT </ci>
+                    <cn type="integer"> 3 </cn>
+                  </apply>
+                </apply>
+              </apply>
+            </apply>
+          </math>
+                </kineticLaw>
+      </reaction>
+      <reaction name="-bCAT" id="bCAT_synthesis">
+        <listOfModifiers>
+          <modifierSpeciesReference species="bCAT"/>
+        </listOfModifiers>
+        <listOfProducts>
+          <speciesReference species="bCAT"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <minus/>
+              <ci> bCAT </ci>
+            </apply>
+          </math>
+                </kineticLaw>
+      </reaction>
+      <reaction name="-CEBP+0.5*0.5^3/(0.5^3+E2F4^3)+0.5*0.5^3/(0.5^3+SP1^3)" id="CEBP_synthesis">
+        <listOfModifiers>
+          <modifierSpeciesReference species="CEBP"/>
+          <modifierSpeciesReference species="E2F4"/>
+          <modifierSpeciesReference species="SP1"/>
+        </listOfModifiers>
+        <listOfProducts>
+          <speciesReference species="CEBP"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <plus/>
+              <apply>
+                <plus/>
+                <apply>
+                  <minus/>
+                  <ci> CEBP </ci>
+                </apply>
+                <apply>
+                  <divide/>
+                  <apply>
+                    <times/>
+                    <cn> 0.5 </cn>
+                    <apply>
+                      <power/>
+                      <cn> 0.5 </cn>
+                      <cn type="integer"> 3 </cn>
+                    </apply>
+                  </apply>
+                  <apply>
+                    <plus/>
+                    <apply>
+                      <power/>
+                      <cn> 0.5 </cn>
+                      <cn type="integer"> 3 </cn>
+                    </apply>
+                    <apply>
+                      <power/>
+                      <ci> E2F4 </ci>
+                      <cn type="integer"> 3 </cn>
+                    </apply>
+                  </apply>
+                </apply>
+              </apply>
+              <apply>
+                <divide/>
+                <apply>
+                  <times/>
+                  <cn> 0.5 </cn>
+                  <apply>
+                    <power/>
+                    <cn> 0.5 </cn>
+                    <cn type="integer"> 3 </cn>
+                  </apply>
+                </apply>
+                <apply>
+                  <plus/>
+                  <apply>
+                    <power/>
+                    <cn> 0.5 </cn>
+                    <cn type="integer"> 3 </cn>
+                  </apply>
+                  <apply>
+                    <power/>
+                    <ci> SP1 </ci>
+                    <cn type="integer"> 3 </cn>
+                  </apply>
+                </apply>
+              </apply>
+            </apply>
+          </math>
+                </kineticLaw>
+      </reaction>
+      <reaction name="-FOXO1A+0.37*NANOG^3/(0.5^3+NANOG^3)+0.37*OCT4^3/(0.5^3+OCT4^3)+0.37*SOX2^3/(0.5^3+SOX2^3)" id="FOXO1A_synthesis">
+        <listOfModifiers>
+          <modifierSpeciesReference species="FOXO1A"/>
+          <modifierSpeciesReference species="NANOG"/>
+          <modifierSpeciesReference species="OCT4"/>
+          <modifierSpeciesReference species="SOX2"/>
+        </listOfModifiers>
+        <listOfProducts>
+          <speciesReference species="FOXO1A"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <plus/>
+              <apply>
+                <plus/>
+                <apply>
+                  <plus/>
+                  <apply>
+                    <minus/>
+                    <ci> FOXO1A </ci>
+                  </apply>
+                  <apply>
+                    <divide/>
+                    <apply>
+                      <times/>
+                      <cn> 0.37 </cn>
+                      <apply>
+                        <power/>
+                        <ci> NANOG </ci>
+                        <cn type="integer"> 3 </cn>
+                      </apply>
+                    </apply>
+                    <apply>
+                      <plus/>
+                      <apply>
+                        <power/>
+                        <cn> 0.5 </cn>
+                        <cn type="integer"> 3 </cn>
+                      </apply>
+                      <apply>
+                        <power/>
+                        <ci> NANOG </ci>
+                        <cn type="integer"> 3 </cn>
+                      </apply>
+                    </apply>
+                  </apply>
+                </apply>
+                <apply>
+                  <divide/>
+                  <apply>
+                    <times/>
+                    <cn> 0.37 </cn>
+                    <apply>
+                      <power/>
+                      <ci> OCT4 </ci>
+                      <cn type="integer"> 3 </cn>
+                    </apply>
+                  </apply>
+                  <apply>
+                    <plus/>
+                    <apply>
+                      <power/>
+                      <cn> 0.5 </cn>
+                      <cn type="integer"> 3 </cn>
+                    </apply>
+                    <apply>
+                      <power/>
+                      <ci> OCT4 </ci>
+                      <cn type="integer"> 3 </cn>
+                    </apply>
+                  </apply>
+                </apply>
+              </apply>
+              <apply>
+                <divide/>
+                <apply>
+                  <times/>
+                  <cn> 0.37 </cn>
+                  <apply>
+                    <power/>
+                    <ci> SOX2 </ci>
+                    <cn type="integer"> 3 </cn>
+                  </apply>
+                </apply>
+                <apply>
+                  <plus/>
+                  <apply>
+                    <power/>
+                    <cn> 0.5 </cn>
+                    <cn type="integer"> 3 </cn>
+                  </apply>
+                  <apply>
+                    <power/>
+                    <ci> SOX2 </ci>
+                    <cn type="integer"> 3 </cn>
+                  </apply>
+                </apply>
+              </apply>
+            </apply>
+          </math>
+                </kineticLaw>
+      </reaction>
+      <reaction name="-LEF1+0.5*0.5^3/(0.5^3+OCT4^3)+0.5*0.5^3/(0.5^3+NANOG^3)" id="LEF1_synthesis">
+        <listOfModifiers>
+          <modifierSpeciesReference species="LEF1"/>
+          <modifierSpeciesReference species="OCT4"/>
+          <modifierSpeciesReference species="NANOG"/>
+        </listOfModifiers>
+        <listOfProducts>
+          <speciesReference species="LEF1"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <plus/>
+              <apply>
+                <plus/>
+                <apply>
+                  <minus/>
+                  <ci> LEF1 </ci>
+                </apply>
+                <apply>
+                  <divide/>
+                  <apply>
+                    <times/>
+                    <cn> 0.5 </cn>
+                    <apply>
+                      <power/>
+                      <cn> 0.5 </cn>
+                      <cn type="integer"> 3 </cn>
+                    </apply>
+                  </apply>
+                  <apply>
+                    <plus/>
+                    <apply>
+                      <power/>
+                      <cn> 0.5 </cn>
+                      <cn type="integer"> 3 </cn>
+                    </apply>
+                    <apply>
+                      <power/>
+                      <ci> OCT4 </ci>
+                      <cn type="integer"> 3 </cn>
+                    </apply>
+                  </apply>
+                </apply>
+              </apply>
+              <apply>
+                <divide/>
+                <apply>
+                  <times/>
+                  <cn> 0.5 </cn>
+                  <apply>
+                    <power/>
+                    <cn> 0.5 </cn>
+                    <cn type="integer"> 3 </cn>
+                  </apply>
+                </apply>
+                <apply>
+                  <plus/>
+                  <apply>
+                    <power/>
+                    <cn> 0.5 </cn>
+                    <cn type="integer"> 3 </cn>
+                  </apply>
+                  <apply>
+                    <power/>
+                    <ci> NANOG </ci>
+                    <cn type="integer"> 3 </cn>
+                  </apply>
+                </apply>
+              </apply>
+            </apply>
+          </math>
+                </kineticLaw>
+      </reaction>
+      <reaction name="-LEF1bCat+0.37*LEF1^3/(0.5^3+LEF1^3)+0.37*bCAT^3/(0.5^3+bCAT^3)" id="LEF1bCat_synthesis">
+        <listOfModifiers>
+          <modifierSpeciesReference species="LEF1bCat"/>
+          <modifierSpeciesReference species="LEF1"/>
+          <modifierSpeciesReference species="bCAT"/>
+        </listOfModifiers>
+        <listOfProducts>
+          <speciesReference species="LEF1bCat"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <plus/>
+              <apply>
+                <plus/>
+                <apply>
+                  <times/>
+                  <apply>
+                    <minus/>
+                    <cn type="integer"> 1 </cn>
+                  </apply>
+                  <ci> LEF1bCat </ci>
+                </apply>
+                <apply>
+                  <divide/>
+                  <apply>
+                    <times/>
+                    <cn> 0.37 </cn>
+                    <apply>
+                      <power/>
+                      <ci> LEF1 </ci>
+                      <cn type="integer"> 3 </cn>
+                    </apply>
+                  </apply>
+                  <apply>
+                    <plus/>
+                    <apply>
+                      <power/>
+                      <cn> 0.5 </cn>
+                      <cn type="integer"> 3 </cn>
+                    </apply>
+                    <apply>
+                      <power/>
+                      <ci> LEF1 </ci>
+                      <cn type="integer"> 3 </cn>
+                    </apply>
+                  </apply>
+                </apply>
+              </apply>
+              <apply>
+                <divide/>
+                <apply>
+                  <times/>
+                  <cn> 0.37 </cn>
+                  <apply>
+                    <power/>
+                    <ci> bCAT </ci>
+                    <cn type="integer"> 3 </cn>
+                  </apply>
+                </apply>
+                <apply>
+                  <plus/>
+                  <apply>
+                    <power/>
+                    <cn> 0.5 </cn>
+                    <cn type="integer"> 3 </cn>
+                  </apply>
+                  <apply>
+                    <power/>
+                    <ci> bCAT </ci>
+                    <cn type="integer"> 3 </cn>
+                  </apply>
+                </apply>
+              </apply>
+            </apply>
+          </math>
+                </kineticLaw>
+      </reaction>
+      <reaction name="-Mad" id="Mad_synthesis">
+        <listOfModifiers>
+          <modifierSpeciesReference species="Mad"/>
+        </listOfModifiers>
+        <listOfProducts>
+          <speciesReference species="Mad"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <minus/>
+              <ci> Mad </ci>
+            </apply>
+          </math>
+                </kineticLaw>
+      </reaction>
+      <reaction name="-MadMax+0.37*Mad^3/(0.5^3+Mad^3)+0.37*MAX^3/(0.5^3+MAX^3)" id="MadMax_synthesis">
+        <listOfModifiers>
+          <modifierSpeciesReference species="MadMax"/>
+          <modifierSpeciesReference species="Mad"/>
+          <modifierSpeciesReference species="MAX"/>
+        </listOfModifiers>
+        <listOfProducts>
+          <speciesReference species="MadMax"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <plus/>
+              <apply>
+                <plus/>
+                <apply>
+                  <minus/>
+                  <ci> MadMax </ci>
+                </apply>
+                <apply>
+                  <divide/>
+                  <apply>
+                    <times/>
+                    <cn> 0.37 </cn>
+                    <apply>
+                      <power/>
+                      <ci> Mad </ci>
+                      <cn type="integer"> 3 </cn>
+                    </apply>
+                  </apply>
+                  <apply>
+                    <plus/>
+                    <apply>
+                      <power/>
+                      <cn> 0.5 </cn>
+                      <cn type="integer"> 3 </cn>
+                    </apply>
+                    <apply>
+                      <power/>
+                      <ci> Mad </ci>
+                      <cn type="integer"> 3 </cn>
+                    </apply>
+                  </apply>
+                </apply>
+              </apply>
+              <apply>
+                <divide/>
+                <apply>
+                  <times/>
+                  <cn> 0.37 </cn>
+                  <apply>
+                    <power/>
+                    <ci> MAX </ci>
+                    <cn type="integer"> 3 </cn>
+                  </apply>
+                </apply>
+                <apply>
+                  <plus/>
+                  <apply>
+                    <power/>
+                    <cn> 0.5 </cn>
+                    <cn type="integer"> 3 </cn>
+                  </apply>
+                  <apply>
+                    <power/>
+                    <ci> MAX </ci>
+                    <cn type="integer"> 3 </cn>
+                  </apply>
+                </apply>
+              </apply>
+            </apply>
+          </math>
+                </kineticLaw>
+      </reaction>
+      <reaction name="-MAX" id="MAX_synthesis">
+        <listOfModifiers>
+          <modifierSpeciesReference species="MAX"/>
+        </listOfModifiers>
+        <listOfProducts>
+          <speciesReference species="MAX"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <minus/>
+              <ci> MAX </ci>
+            </apply>
+          </math>
+                </kineticLaw>
+      </reaction>
+      <reaction name="-MYC+0.37*LEF1bCat^3/(0.5^3+LEF1bCat^3)+0.37*PRDM14^3/(0.5^3+PRDM14^3)+0.37*E2F4^3/(0.5^3+E2F4^3)+0.5*0.5^3/(0.5^3+TCF3^3)" id="MYC_synthesis">
+        <listOfModifiers>
+          <modifierSpeciesReference species="MYC"/>
+          <modifierSpeciesReference species="LEF1bCat"/>
+          <modifierSpeciesReference species="PRDM14"/>
+          <modifierSpeciesReference species="E2F4"/>
+          <modifierSpeciesReference species="TCF3"/>
+        </listOfModifiers>
+        <listOfProducts>
+          <speciesReference species="MYC"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <plus/>
+              <apply>
+                <plus/>
+                <apply>
+                  <plus/>
+                  <apply>
+                    <plus/>
+                    <apply>
+                      <minus/>
+                      <ci> MYC </ci>
+                    </apply>
+                    <apply>
+                      <divide/>
+                      <apply>
+                        <times/>
+                        <cn> 0.37 </cn>
+                        <apply>
+                          <power/>
+                          <ci> LEF1bCat </ci>
+                          <cn type="integer"> 3 </cn>
+                        </apply>
+                      </apply>
+                      <apply>
+                        <plus/>
+                        <apply>
+                          <power/>
+                          <cn> 0.5 </cn>
+                          <cn type="integer"> 3 </cn>
+                        </apply>
+                        <apply>
+                          <power/>
+                          <ci> LEF1bCat </ci>
+                          <cn type="integer"> 3 </cn>
+                        </apply>
+                      </apply>
+                    </apply>
+                  </apply>
+                  <apply>
+                    <divide/>
+                    <apply>
+                      <times/>
+                      <cn> 0.37 </cn>
+                      <apply>
+                        <power/>
+                        <ci> PRDM14 </ci>
+                        <cn type="integer"> 3 </cn>
+                      </apply>
+                    </apply>
+                    <apply>
+                      <plus/>
+                      <apply>
+                        <power/>
+                        <cn> 0.5 </cn>
+                        <cn type="integer"> 3 </cn>
+                      </apply>
+                      <apply>
+                        <power/>
+                        <ci> PRDM14 </ci>
+                        <cn type="integer"> 3 </cn>
+                      </apply>
+                    </apply>
+                  </apply>
+                </apply>
+                <apply>
+                  <divide/>
+                  <apply>
+                    <times/>
+                    <cn> 0.37 </cn>
+                    <apply>
+                      <power/>
+                      <ci> E2F4 </ci>
+                      <cn type="integer"> 3 </cn>
+                    </apply>
+                  </apply>
+                  <apply>
+                    <plus/>
+                    <apply>
+                      <power/>
+                      <cn> 0.5 </cn>
+                      <cn type="integer"> 3 </cn>
+                    </apply>
+                    <apply>
+                      <power/>
+                      <ci> E2F4 </ci>
+                      <cn type="integer"> 3 </cn>
+                    </apply>
+                  </apply>
+                </apply>
+              </apply>
+              <apply>
+                <divide/>
+                <apply>
+                  <times/>
+                  <cn> 0.5 </cn>
+                  <apply>
+                    <power/>
+                    <cn> 0.5 </cn>
+                    <cn type="integer"> 3 </cn>
+                  </apply>
+                </apply>
+                <apply>
+                  <plus/>
+                  <apply>
+                    <power/>
+                    <cn> 0.5 </cn>
+                    <cn type="integer"> 3 </cn>
+                  </apply>
+                  <apply>
+                    <power/>
+                    <ci> TCF3 </ci>
+                    <cn type="integer"> 3 </cn>
+                  </apply>
+                </apply>
+              </apply>
+            </apply>
+          </math>
+                </kineticLaw>
+      </reaction>
+      <reaction name="-TCF3+0.37*E2F4^3/(0.5^3+E2F4^3)" id="TCF3_synthesis">
+        <listOfModifiers>
+          <modifierSpeciesReference species="TCF3"/>
+          <modifierSpeciesReference species="E2F4"/>
+        </listOfModifiers>
+        <listOfProducts>
+          <speciesReference species="TCF3"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <plus/>
+              <apply>
+                <times/>
+                <apply>
+                  <minus/>
+                  <cn type="integer"> 1 </cn>
+                </apply>
+                <ci> TCF3 </ci>
+              </apply>
+              <apply>
+                <divide/>
+                <apply>
+                  <times/>
+                  <cn> 0.37 </cn>
+                  <apply>
+                    <power/>
+                    <ci> E2F4 </ci>
+                    <cn type="integer"> 3 </cn>
+                  </apply>
+                </apply>
+                <apply>
+                  <plus/>
+                  <apply>
+                    <power/>
+                    <cn> 0.5 </cn>
+                    <cn type="integer"> 3 </cn>
+                  </apply>
+                  <apply>
+                    <power/>
+                    <ci> E2F4 </ci>
+                    <cn type="integer"> 3 </cn>
+                  </apply>
+                </apply>
+              </apply>
+            </apply>
+          </math>
+                </kineticLaw>
+      </reaction>
+      <reaction name="-MycMax+0.37*MAX^3/(0.5^3+MAX^3)+0.37*MYC^3/(0.5^3+MYC^3)" id="MycMax_synthesis">
+        <listOfModifiers>
+          <modifierSpeciesReference species="MycMax"/>
+          <modifierSpeciesReference species="MAX"/>
+          <modifierSpeciesReference species="MYC"/>
+        </listOfModifiers>
+        <listOfProducts>
+          <speciesReference species="MycMax"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <plus/>
+              <apply>
+                <plus/>
+                <apply>
+                  <times/>
+                  <apply>
+                    <minus/>
+                    <cn type="integer"> 1 </cn>
+                  </apply>
+                  <ci> MycMax </ci>
+                </apply>
+                <apply>
+                  <divide/>
+                  <apply>
+                    <times/>
+                    <cn> 0.37 </cn>
+                    <apply>
+                      <power/>
+                      <ci> MAX </ci>
+                      <cn type="integer"> 3 </cn>
+                    </apply>
+                  </apply>
+                  <apply>
+                    <plus/>
+                    <apply>
+                      <power/>
+                      <cn> 0.5 </cn>
+                      <cn type="integer"> 3 </cn>
+                    </apply>
+                    <apply>
+                      <power/>
+                      <ci> MAX </ci>
+                      <cn type="integer"> 3 </cn>
+                    </apply>
+                  </apply>
+                </apply>
+              </apply>
+              <apply>
+                <divide/>
+                <apply>
+                  <times/>
+                  <cn> 0.37 </cn>
+                  <apply>
+                    <power/>
+                    <ci> MYC </ci>
+                    <cn type="integer"> 3 </cn>
+                  </apply>
+                </apply>
+                <apply>
+                  <plus/>
+                  <apply>
+                    <power/>
+                    <cn> 0.5 </cn>
+                    <cn type="integer"> 3 </cn>
+                  </apply>
+                  <apply>
+                    <power/>
+                    <ci> MYC </ci>
+                    <cn type="integer"> 3 </cn>
+                  </apply>
+                </apply>
+              </apply>
+            </apply>
+          </math>
+                </kineticLaw>
+      </reaction>
+      <reaction name="-MYCSP1+0.37*SP1^3/(0.5^3+SP1^3)+0.37*MYC^3/(0.5^3+MYC^3)" id="MYCSP1_synthesis">
+        <listOfModifiers>
+          <modifierSpeciesReference species="MYCSP1"/>
+          <modifierSpeciesReference species="SP1"/>
+          <modifierSpeciesReference species="MYC"/>
+        </listOfModifiers>
+        <listOfProducts>
+          <speciesReference species="MYCSP1"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <plus/>
+              <apply>
+                <plus/>
+                <apply>
+                  <times/>
+                  <apply>
+                    <minus/>
+                    <cn type="integer"> 1 </cn>
+                  </apply>
+                  <ci> MYCSP1 </ci>
+                </apply>
+                <apply>
+                  <divide/>
+                  <apply>
+                    <times/>
+                    <cn> 0.37 </cn>
+                    <apply>
+                      <power/>
+                      <ci> SP1 </ci>
+                      <cn type="integer"> 3 </cn>
+                    </apply>
+                  </apply>
+                  <apply>
+                    <plus/>
+                    <apply>
+                      <power/>
+                      <cn> 0.5 </cn>
+                      <cn type="integer"> 3 </cn>
+                    </apply>
+                    <apply>
+                      <power/>
+                      <ci> SP1 </ci>
+                      <cn type="integer"> 3 </cn>
+                    </apply>
+                  </apply>
+                </apply>
+              </apply>
+              <apply>
+                <divide/>
+                <apply>
+                  <times/>
+                  <cn> 0.37 </cn>
+                  <apply>
+                    <power/>
+                    <ci> MYC </ci>
+                    <cn type="integer"> 3 </cn>
+                  </apply>
+                </apply>
+                <apply>
+                  <plus/>
+                  <apply>
+                    <power/>
+                    <cn> 0.5 </cn>
+                    <cn type="integer"> 3 </cn>
+                  </apply>
+                  <apply>
+                    <power/>
+                    <ci> MYC </ci>
+                    <cn type="integer"> 3 </cn>
+                  </apply>
+                </apply>
+              </apply>
+            </apply>
+          </math>
+                </kineticLaw>
+      </reaction>
+      <reaction name="-NFYA+0.37*E2F4^3/(0.5^3+E2F4^3)+0.37*SOX2^3/(0.5^3+SOX2^3)" id="NFYA_synthesis">
+        <listOfModifiers>
+          <modifierSpeciesReference species="NFYA"/>
+          <modifierSpeciesReference species="E2F4"/>
+          <modifierSpeciesReference species="SOX2"/>
+        </listOfModifiers>
+        <listOfProducts>
+          <speciesReference species="NFYA"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <plus/>
+              <apply>
+                <plus/>
+                <apply>
+                  <minus/>
+                  <ci> NFYA </ci>
+                </apply>
+                <apply>
+                  <divide/>
+                  <apply>
+                    <times/>
+                    <cn> 0.37 </cn>
+                    <apply>
+                      <power/>
+                      <ci> E2F4 </ci>
+                      <cn type="integer"> 3 </cn>
+                    </apply>
+                  </apply>
+                  <apply>
+                    <plus/>
+                    <apply>
+                      <power/>
+                      <cn> 0.5 </cn>
+                      <cn type="integer"> 3 </cn>
+                    </apply>
+                    <apply>
+                      <power/>
+                      <ci> E2F4 </ci>
+                      <cn type="integer"> 3 </cn>
+                    </apply>
+                  </apply>
+                </apply>
+              </apply>
+              <apply>
+                <divide/>
+                <apply>
+                  <times/>
+                  <cn> 0.37 </cn>
+                  <apply>
+                    <power/>
+                    <ci> SOX2 </ci>
+                    <cn type="integer"> 3 </cn>
+                  </apply>
+                </apply>
+                <apply>
+                  <plus/>
+                  <apply>
+                    <power/>
+                    <cn> 0.5 </cn>
+                    <cn type="integer"> 3 </cn>
+                  </apply>
+                  <apply>
+                    <power/>
+                    <ci> SOX2 </ci>
+                    <cn type="integer"> 3 </cn>
+                  </apply>
+                </apply>
+              </apply>
+            </apply>
+          </math>
+                </kineticLaw>
+      </reaction>
+      <reaction name="-SALL4+0.37*LEF1^3/(0.5^3+LEF1^3)+0.37*NANOG^3/(0.5^3+NANOG^3)+0.37*SOX2^3/(0.5^3+SOX2^3)" id="SALL4_synthesis">
+        <listOfModifiers>
+          <modifierSpeciesReference species="SALL4"/>
+          <modifierSpeciesReference species="LEF1"/>
+          <modifierSpeciesReference species="NANOG"/>
+          <modifierSpeciesReference species="SOX2"/>
+        </listOfModifiers>
+        <listOfProducts>
+          <speciesReference species="SALL4"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <plus/>
+              <apply>
+                <plus/>
+                <apply>
+                  <plus/>
+                  <apply>
+                    <minus/>
+                    <ci> SALL4 </ci>
+                  </apply>
+                  <apply>
+                    <divide/>
+                    <apply>
+                      <times/>
+                      <cn> 0.37 </cn>
+                      <apply>
+                        <power/>
+                        <ci> LEF1 </ci>
+                        <cn type="integer"> 3 </cn>
+                      </apply>
+                    </apply>
+                    <apply>
+                      <plus/>
+                      <apply>
+                        <power/>
+                        <cn> 0.5 </cn>
+                        <cn type="integer"> 3 </cn>
+                      </apply>
+                      <apply>
+                        <power/>
+                        <ci> LEF1 </ci>
+                        <cn type="integer"> 3 </cn>
+                      </apply>
+                    </apply>
+                  </apply>
+                </apply>
+                <apply>
+                  <divide/>
+                  <apply>
+                    <times/>
+                    <cn> 0.37 </cn>
+                    <apply>
+                      <power/>
+                      <ci> NANOG </ci>
+                      <cn type="integer"> 3 </cn>
+                    </apply>
+                  </apply>
+                  <apply>
+                    <plus/>
+                    <apply>
+                      <power/>
+                      <cn> 0.5 </cn>
+                      <cn type="integer"> 3 </cn>
+                    </apply>
+                    <apply>
+                      <power/>
+                      <ci> NANOG </ci>
+                      <cn type="integer"> 3 </cn>
+                    </apply>
+                  </apply>
+                </apply>
+              </apply>
+              <apply>
+                <divide/>
+                <apply>
+                  <times/>
+                  <cn> 0.37 </cn>
+                  <apply>
+                    <power/>
+                    <ci> SOX2 </ci>
+                    <cn type="integer"> 3 </cn>
+                  </apply>
+                </apply>
+                <apply>
+                  <plus/>
+                  <apply>
+                    <power/>
+                    <cn> 0.5 </cn>
+                    <cn type="integer"> 3 </cn>
+                  </apply>
+                  <apply>
+                    <power/>
+                    <ci> SOX2 </ci>
+                    <cn type="integer"> 3 </cn>
+                  </apply>
+                </apply>
+              </apply>
+            </apply>
+          </math>
+                </kineticLaw>
+      </reaction>
+      <reaction name="-ZNF206+0.37*NANOG^3/(0.5^3+NANOG^3)" id="ZNF206_synthesis">
+        <listOfModifiers>
+          <modifierSpeciesReference species="ZNF206"/>
+          <modifierSpeciesReference species="NANOG"/>
+        </listOfModifiers>
+        <listOfProducts>
+          <speciesReference species="ZNF206"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <plus/>
+              <apply>
+                <minus/>
+                <ci> ZNF206 </ci>
+              </apply>
+              <apply>
+                <divide/>
+                <apply>
+                  <times/>
+                  <cn> 0.37 </cn>
+                  <apply>
+                    <power/>
+                    <ci> NANOG </ci>
+                    <cn type="integer"> 3 </cn>
+                  </apply>
+                </apply>
+                <apply>
+                  <plus/>
+                  <apply>
+                    <power/>
+                    <cn> 0.5 </cn>
+                    <cn type="integer"> 3 </cn>
+                  </apply>
+                  <apply>
+                    <power/>
+                    <ci> NANOG </ci>
+                    <cn type="integer"> 3 </cn>
+                  </apply>
+                </apply>
+              </apply>
+            </apply>
+          </math>
+                </kineticLaw>
+      </reaction>
+      <reaction name="-NANOG+0.37*NANOG^3/(0.5^3+NANOG^3)+0.37*OCT4Sox2^3/(0.5^3+OCT4Sox2^3)+0.37*PBX1^3/(0.5^3+PBX1^3)+0.37*ZIC3^3/(0.5^3+ZIC3^3)+0.37*KLF4^3/(0.5^3+KLF4^3)+0.5*0.5^3/(0.5^3+GATA6^3)" id="NANOG_synthesis">
+        <listOfModifiers>
+          <modifierSpeciesReference species="NANOG"/>
+          <modifierSpeciesReference species="OCT4Sox2"/>
+          <modifierSpeciesReference species="PBX1"/>
+          <modifierSpeciesReference species="ZIC3"/>
+          <modifierSpeciesReference species="KLF4"/>
+          <modifierSpeciesReference species="GATA6"/>
+        </listOfModifiers>
+        <listOfProducts>
+          <speciesReference species="NANOG"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <plus/>
+              <apply>
+                <plus/>
+                <apply>
+                  <plus/>
+                  <apply>
+                    <plus/>
+                    <apply>
+                      <plus/>
+                      <apply>
+                        <plus/>
+                        <apply>
+                          <minus/>
+                          <ci> NANOG </ci>
+                        </apply>
+                        <apply>
+                          <divide/>
+                          <apply>
+                            <times/>
+                            <cn> 0.37 </cn>
+                            <apply>
+                              <power/>
+                              <ci> NANOG </ci>
+                              <cn type="integer"> 3 </cn>
+                            </apply>
+                          </apply>
+                          <apply>
+                            <plus/>
+                            <apply>
+                              <power/>
+                              <cn> 0.5 </cn>
+                              <cn type="integer"> 3 </cn>
+                            </apply>
+                            <apply>
+                              <power/>
+                              <ci> NANOG </ci>
+                              <cn type="integer"> 3 </cn>
+                            </apply>
+                          </apply>
+                        </apply>
+                      </apply>
+                      <apply>
+                        <divide/>
+                        <apply>
+                          <times/>
+                          <cn> 0.37 </cn>
+                          <apply>
+                            <power/>
+                            <ci> OCT4Sox2 </ci>
+                            <cn type="integer"> 3 </cn>
+                          </apply>
+                        </apply>
+                        <apply>
+                          <plus/>
+                          <apply>
+                            <power/>
+                            <cn> 0.5 </cn>
+                            <cn type="integer"> 3 </cn>
+                          </apply>
+                          <apply>
+                            <power/>
+                            <ci> OCT4Sox2 </ci>
+                            <cn type="integer"> 3 </cn>
+                          </apply>
+                        </apply>
+                      </apply>
+                    </apply>
+                    <apply>
+                      <divide/>
+                      <apply>
+                        <times/>
+                        <cn> 0.37 </cn>
+                        <apply>
+                          <power/>
+                          <ci> PBX1 </ci>
+                          <cn type="integer"> 3 </cn>
+                        </apply>
+                      </apply>
+                      <apply>
+                        <plus/>
+                        <apply>
+                          <power/>
+                          <cn> 0.5 </cn>
+                          <cn type="integer"> 3 </cn>
+                        </apply>
+                        <apply>
+                          <power/>
+                          <ci> PBX1 </ci>
+                          <cn type="integer"> 3 </cn>
+                        </apply>
+                      </apply>
+                    </apply>
+                  </apply>
+                  <apply>
+                    <divide/>
+                    <apply>
+                      <times/>
+                      <cn> 0.37 </cn>
+                      <apply>
+                        <power/>
+                        <ci> ZIC3 </ci>
+                        <cn type="integer"> 3 </cn>
+                      </apply>
+                    </apply>
+                    <apply>
+                      <plus/>
+                      <apply>
+                        <power/>
+                        <cn> 0.5 </cn>
+                        <cn type="integer"> 3 </cn>
+                      </apply>
+                      <apply>
+                        <power/>
+                        <ci> ZIC3 </ci>
+                        <cn type="integer"> 3 </cn>
+                      </apply>
+                    </apply>
+                  </apply>
+                </apply>
+                <apply>
+                  <divide/>
+                  <apply>
+                    <times/>
+                    <cn> 0.37 </cn>
+                    <apply>
+                      <power/>
+                      <ci> KLF4 </ci>
+                      <cn type="integer"> 3 </cn>
+                    </apply>
+                  </apply>
+                  <apply>
+                    <plus/>
+                    <apply>
+                      <power/>
+                      <cn> 0.5 </cn>
+                      <cn type="integer"> 3 </cn>
+                    </apply>
+                    <apply>
+                      <power/>
+                      <ci> KLF4 </ci>
+                      <cn type="integer"> 3 </cn>
+                    </apply>
+                  </apply>
+                </apply>
+              </apply>
+              <apply>
+                <divide/>
+                <apply>
+                  <times/>
+                  <cn> 0.5 </cn>
+                  <apply>
+                    <power/>
+                    <cn> 0.5 </cn>
+                    <cn type="integer"> 3 </cn>
+                  </apply>
+                </apply>
+                <apply>
+                  <plus/>
+                  <apply>
+                    <power/>
+                    <cn> 0.5 </cn>
+                    <cn type="integer"> 3 </cn>
+                  </apply>
+                  <apply>
+                    <power/>
+                    <ci> GATA6 </ci>
+                    <cn type="integer"> 3 </cn>
+                  </apply>
+                </apply>
+              </apply>
+            </apply>
+          </math>
+                </kineticLaw>
+      </reaction>
+      <reaction name="-OCT4+0.37*NANOG^3/(0.5^3+NANOG^3)+0.37*OCT4Sox2^3/(0.5^3+OCT4Sox2^3)+0.5*0.5^3/(0.5^3+CDX2^3)" id="OCT4_synthesis">
+        <listOfModifiers>
+          <modifierSpeciesReference species="OCT4"/>
+          <modifierSpeciesReference species="NANOG"/>
+          <modifierSpeciesReference species="OCT4Sox2"/>
+          <modifierSpeciesReference species="CDX2"/>
+        </listOfModifiers>
+        <listOfProducts>
+          <speciesReference species="OCT4"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <plus/>
+              <apply>
+                <plus/>
+                <apply>
+                  <plus/>
+                  <apply>
+                    <minus/>
+                    <ci> OCT4 </ci>
+                  </apply>
+                  <apply>
+                    <divide/>
+                    <apply>
+                      <times/>
+                      <cn> 0.37 </cn>
+                      <apply>
+                        <power/>
+                        <ci> NANOG </ci>
+                        <cn type="integer"> 3 </cn>
+                      </apply>
+                    </apply>
+                    <apply>
+                      <plus/>
+                      <apply>
+                        <power/>
+                        <cn> 0.5 </cn>
+                        <cn type="integer"> 3 </cn>
+                      </apply>
+                      <apply>
+                        <power/>
+                        <ci> NANOG </ci>
+                        <cn type="integer"> 3 </cn>
+                      </apply>
+                    </apply>
+                  </apply>
+                </apply>
+                <apply>
+                  <divide/>
+                  <apply>
+                    <times/>
+                    <cn> 0.37 </cn>
+                    <apply>
+                      <power/>
+                      <ci> OCT4Sox2 </ci>
+                      <cn type="integer"> 3 </cn>
+                    </apply>
+                  </apply>
+                  <apply>
+                    <plus/>
+                    <apply>
+                      <power/>
+                      <cn> 0.5 </cn>
+                      <cn type="integer"> 3 </cn>
+                    </apply>
+                    <apply>
+                      <power/>
+                      <ci> OCT4Sox2 </ci>
+                      <cn type="integer"> 3 </cn>
+                    </apply>
+                  </apply>
+                </apply>
+              </apply>
+              <apply>
+                <divide/>
+                <apply>
+                  <times/>
+                  <cn> 0.5 </cn>
+                  <apply>
+                    <power/>
+                    <cn> 0.5 </cn>
+                    <cn type="integer"> 3 </cn>
+                  </apply>
+                </apply>
+                <apply>
+                  <plus/>
+                  <apply>
+                    <power/>
+                    <cn> 0.5 </cn>
+                    <cn type="integer"> 3 </cn>
+                  </apply>
+                  <apply>
+                    <power/>
+                    <ci> CDX2 </ci>
+                    <cn type="integer"> 3 </cn>
+                  </apply>
+                </apply>
+              </apply>
+            </apply>
+          </math>
+                </kineticLaw>
+      </reaction>
+      <reaction name="-OCT4Sox2+0.37*OCT4^3/(0.5^3+OCT4^3)+0.37*SOX2^3/(0.5^3+SOX2^3)" id="OCT4Sox2_synthesis">
+        <listOfModifiers>
+          <modifierSpeciesReference species="OCT4Sox2"/>
+          <modifierSpeciesReference species="OCT4"/>
+          <modifierSpeciesReference species="SOX2"/>
+        </listOfModifiers>
+        <listOfProducts>
+          <speciesReference species="OCT4Sox2"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <plus/>
+              <apply>
+                <plus/>
+                <apply>
+                  <minus/>
+                  <ci> OCT4Sox2 </ci>
+                </apply>
+                <apply>
+                  <divide/>
+                  <apply>
+                    <times/>
+                    <cn> 0.37 </cn>
+                    <apply>
+                      <power/>
+                      <ci> OCT4 </ci>
+                      <cn type="integer"> 3 </cn>
+                    </apply>
+                  </apply>
+                  <apply>
+                    <plus/>
+                    <apply>
+                      <power/>
+                      <cn> 0.5 </cn>
+                      <cn type="integer"> 3 </cn>
+                    </apply>
+                    <apply>
+                      <power/>
+                      <ci> OCT4 </ci>
+                      <cn type="integer"> 3 </cn>
+                    </apply>
+                  </apply>
+                </apply>
+              </apply>
+              <apply>
+                <divide/>
+                <apply>
+                  <times/>
+                  <cn> 0.37 </cn>
+                  <apply>
+                    <power/>
+                    <ci> SOX2 </ci>
+                    <cn type="integer"> 3 </cn>
+                  </apply>
+                </apply>
+                <apply>
+                  <plus/>
+                  <apply>
+                    <power/>
+                    <cn> 0.5 </cn>
+                    <cn type="integer"> 3 </cn>
+                  </apply>
+                  <apply>
+                    <power/>
+                    <ci> SOX2 </ci>
+                    <cn type="integer"> 3 </cn>
+                  </apply>
+                </apply>
+              </apply>
+            </apply>
+          </math>
+                </kineticLaw>
+      </reaction>
+      <reaction name="-SOX2+0.37*NANOG^3/(0.5^3+NANOG^3)+0.37*OCT4Sox2^3/(0.5^3+OCT4Sox2^3)" id="SOX2_synthesis">
+        <listOfModifiers>
+          <modifierSpeciesReference species="SOX2"/>
+          <modifierSpeciesReference species="NANOG"/>
+          <modifierSpeciesReference species="OCT4Sox2"/>
+        </listOfModifiers>
+        <listOfProducts>
+          <speciesReference species="SOX2"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <plus/>
+              <apply>
+                <plus/>
+                <apply>
+                  <minus/>
+                  <ci> SOX2 </ci>
+                </apply>
+                <apply>
+                  <divide/>
+                  <apply>
+                    <times/>
+                    <cn> 0.37 </cn>
+                    <apply>
+                      <power/>
+                      <ci> NANOG </ci>
+                      <cn type="integer"> 3 </cn>
+                    </apply>
+                  </apply>
+                  <apply>
+                    <plus/>
+                    <apply>
+                      <power/>
+                      <cn> 0.5 </cn>
+                      <cn type="integer"> 3 </cn>
+                    </apply>
+                    <apply>
+                      <power/>
+                      <ci> NANOG </ci>
+                      <cn type="integer"> 3 </cn>
+                    </apply>
+                  </apply>
+                </apply>
+              </apply>
+              <apply>
+                <divide/>
+                <apply>
+                  <times/>
+                  <cn> 0.37 </cn>
+                  <apply>
+                    <power/>
+                    <ci> OCT4Sox2 </ci>
+                    <cn type="integer"> 3 </cn>
+                  </apply>
+                </apply>
+                <apply>
+                  <plus/>
+                  <apply>
+                    <power/>
+                    <cn> 0.5 </cn>
+                    <cn type="integer"> 3 </cn>
+                  </apply>
+                  <apply>
+                    <power/>
+                    <ci> OCT4Sox2 </ci>
+                    <cn type="integer"> 3 </cn>
+                  </apply>
+                </apply>
+              </apply>
+            </apply>
+          </math>
+                </kineticLaw>
+      </reaction>
+      <reaction name="-ZIC3+0.37*NANOG^3/(0.5^3+NANOG^3)+0.37*SOX2^3/(0.5^3+SOX2^3)" id="ZIC3_synthesis">
+        <listOfModifiers>
+          <modifierSpeciesReference species="ZIC3"/>
+          <modifierSpeciesReference species="NANOG"/>
+          <modifierSpeciesReference species="SOX2"/>
+        </listOfModifiers>
+        <listOfProducts>
+          <speciesReference species="ZIC3"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <plus/>
+              <apply>
+                <plus/>
+                <apply>
+                  <minus/>
+                  <ci> ZIC3 </ci>
+                </apply>
+                <apply>
+                  <divide/>
+                  <apply>
+                    <times/>
+                    <cn> 0.37 </cn>
+                    <apply>
+                      <power/>
+                      <ci> NANOG </ci>
+                      <cn type="integer"> 3 </cn>
+                    </apply>
+                  </apply>
+                  <apply>
+                    <plus/>
+                    <apply>
+                      <power/>
+                      <cn> 0.5 </cn>
+                      <cn type="integer"> 3 </cn>
+                    </apply>
+                    <apply>
+                      <power/>
+                      <ci> NANOG </ci>
+                      <cn type="integer"> 3 </cn>
+                    </apply>
+                  </apply>
+                </apply>
+              </apply>
+              <apply>
+                <divide/>
+                <apply>
+                  <times/>
+                  <cn> 0.37 </cn>
+                  <apply>
+                    <power/>
+                    <ci> SOX2 </ci>
+                    <cn type="integer"> 3 </cn>
+                  </apply>
+                </apply>
+                <apply>
+                  <plus/>
+                  <apply>
+                    <power/>
+                    <cn> 0.5 </cn>
+                    <cn type="integer"> 3 </cn>
+                  </apply>
+                  <apply>
+                    <power/>
+                    <ci> SOX2 </ci>
+                    <cn type="integer"> 3 </cn>
+                  </apply>
+                </apply>
+              </apply>
+            </apply>
+          </math>
+                </kineticLaw>
+      </reaction>
+      <reaction name="-KLF4+0.37*NANOG^3/(0.5^3+NANOG^3)+0.37*OCT4^3/(0.5^3+OCT4^3)+0.37*SOX2^3/(0.5^3+SOX2^3)" id="KLF4_synthesis">
+        <listOfModifiers>
+          <modifierSpeciesReference species="KLF4"/>
+          <modifierSpeciesReference species="NANOG"/>
+          <modifierSpeciesReference species="OCT4"/>
+          <modifierSpeciesReference species="SOX2"/>
+        </listOfModifiers>
+        <listOfProducts>
+          <speciesReference species="KLF4"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <plus/>
+              <apply>
+                <plus/>
+                <apply>
+                  <plus/>
+                  <apply>
+                    <minus/>
+                    <ci> KLF4 </ci>
+                  </apply>
+                  <apply>
+                    <divide/>
+                    <apply>
+                      <times/>
+                      <cn> 0.37 </cn>
+                      <apply>
+                        <power/>
+                        <ci> NANOG </ci>
+                        <cn type="integer"> 3 </cn>
+                      </apply>
+                    </apply>
+                    <apply>
+                      <plus/>
+                      <apply>
+                        <power/>
+                        <cn> 0.5 </cn>
+                        <cn type="integer"> 3 </cn>
+                      </apply>
+                      <apply>
+                        <power/>
+                        <ci> NANOG </ci>
+                        <cn type="integer"> 3 </cn>
+                      </apply>
+                    </apply>
+                  </apply>
+                </apply>
+                <apply>
+                  <divide/>
+                  <apply>
+                    <times/>
+                    <cn> 0.37 </cn>
+                    <apply>
+                      <power/>
+                      <ci> OCT4 </ci>
+                      <cn type="integer"> 3 </cn>
+                    </apply>
+                  </apply>
+                  <apply>
+                    <plus/>
+                    <apply>
+                      <power/>
+                      <cn> 0.5 </cn>
+                      <cn type="integer"> 3 </cn>
+                    </apply>
+                    <apply>
+                      <power/>
+                      <ci> OCT4 </ci>
+                      <cn type="integer"> 3 </cn>
+                    </apply>
+                  </apply>
+                </apply>
+              </apply>
+              <apply>
+                <divide/>
+                <apply>
+                  <times/>
+                  <cn> 0.37 </cn>
+                  <apply>
+                    <power/>
+                    <ci> SOX2 </ci>
+                    <cn type="integer"> 3 </cn>
+                  </apply>
+                </apply>
+                <apply>
+                  <plus/>
+                  <apply>
+                    <power/>
+                    <cn> 0.5 </cn>
+                    <cn type="integer"> 3 </cn>
+                  </apply>
+                  <apply>
+                    <power/>
+                    <ci> SOX2 </ci>
+                    <cn type="integer"> 3 </cn>
+                  </apply>
+                </apply>
+              </apply>
+            </apply>
+          </math>
+                </kineticLaw>
+      </reaction>
+      <reaction name="-FOXD3+0.37*NANOG^3/(0.5^3+NANOG^3)+0.37*OCT4^3/(0.5^3+OCT4^3)+0.37*SOX2^3/(0.5^3+SOX2^3)+0.37*E2F4^3/(0.5^3+E2F4^3)" id="FOXD3_synthesis">
+        <listOfModifiers>
+          <modifierSpeciesReference species="FOXD3"/>
+          <modifierSpeciesReference species="NANOG"/>
+          <modifierSpeciesReference species="OCT4"/>
+          <modifierSpeciesReference species="SOX2"/>
+          <modifierSpeciesReference species="E2F4"/>
+        </listOfModifiers>
+        <listOfProducts>
+          <speciesReference species="FOXD3"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <plus/>
+              <apply>
+                <plus/>
+                <apply>
+                  <plus/>
+                  <apply>
+                    <plus/>
+                    <apply>
+                      <minus/>
+                      <ci> FOXD3 </ci>
+                    </apply>
+                    <apply>
+                      <divide/>
+                      <apply>
+                        <times/>
+                        <cn> 0.37 </cn>
+                        <apply>
+                          <power/>
+                          <ci> NANOG </ci>
+                          <cn type="integer"> 3 </cn>
+                        </apply>
+                      </apply>
+                      <apply>
+                        <plus/>
+                        <apply>
+                          <power/>
+                          <cn> 0.5 </cn>
+                          <cn type="integer"> 3 </cn>
+                        </apply>
+                        <apply>
+                          <power/>
+                          <ci> NANOG </ci>
+                          <cn type="integer"> 3 </cn>
+                        </apply>
+                      </apply>
+                    </apply>
+                  </apply>
+                  <apply>
+                    <divide/>
+                    <apply>
+                      <times/>
+                      <cn> 0.37 </cn>
+                      <apply>
+                        <power/>
+                        <ci> OCT4 </ci>
+                        <cn type="integer"> 3 </cn>
+                      </apply>
+                    </apply>
+                    <apply>
+                      <plus/>
+                      <apply>
+                        <power/>
+                        <cn> 0.5 </cn>
+                        <cn type="integer"> 3 </cn>
+                      </apply>
+                      <apply>
+                        <power/>
+                        <ci> OCT4 </ci>
+                        <cn type="integer"> 3 </cn>
+                      </apply>
+                    </apply>
+                  </apply>
+                </apply>
+                <apply>
+                  <divide/>
+                  <apply>
+                    <times/>
+                    <cn> 0.37 </cn>
+                    <apply>
+                      <power/>
+                      <ci> SOX2 </ci>
+                      <cn type="integer"> 3 </cn>
+                    </apply>
+                  </apply>
+                  <apply>
+                    <plus/>
+                    <apply>
+                      <power/>
+                      <cn> 0.5 </cn>
+                      <cn type="integer"> 3 </cn>
+                    </apply>
+                    <apply>
+                      <power/>
+                      <ci> SOX2 </ci>
+                      <cn type="integer"> 3 </cn>
+                    </apply>
+                  </apply>
+                </apply>
+              </apply>
+              <apply>
+                <divide/>
+                <apply>
+                  <times/>
+                  <cn> 0.37 </cn>
+                  <apply>
+                    <power/>
+                    <ci> E2F4 </ci>
+                    <cn type="integer"> 3 </cn>
+                  </apply>
+                </apply>
+                <apply>
+                  <plus/>
+                  <apply>
+                    <power/>
+                    <cn> 0.5 </cn>
+                    <cn type="integer"> 3 </cn>
+                  </apply>
+                  <apply>
+                    <power/>
+                    <ci> E2F4 </ci>
+                    <cn type="integer"> 3 </cn>
+                  </apply>
+                </apply>
+              </apply>
+            </apply>
+          </math>
+                </kineticLaw>
+      </reaction>
+      <reaction name="-ZFP42+0.37*NANOG^3/(0.5^3+NANOG^3)+0.37*OCT4^3/(0.5^3+OCT4^3)" id="ZFP42_synthesis">
+        <listOfModifiers>
+          <modifierSpeciesReference species="ZFP42"/>
+          <modifierSpeciesReference species="NANOG"/>
+          <modifierSpeciesReference species="OCT4"/>
+        </listOfModifiers>
+        <listOfProducts>
+          <speciesReference species="ZFP42"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <plus/>
+              <apply>
+                <plus/>
+                <apply>
+                  <minus/>
+                  <ci> ZFP42 </ci>
+                </apply>
+                <apply>
+                  <divide/>
+                  <apply>
+                    <times/>
+                    <cn> 0.37 </cn>
+                    <apply>
+                      <power/>
+                      <ci> NANOG </ci>
+                      <cn type="integer"> 3 </cn>
+                    </apply>
+                  </apply>
+                  <apply>
+                    <plus/>
+                    <apply>
+                      <power/>
+                      <cn> 0.5 </cn>
+                      <cn type="integer"> 3 </cn>
+                    </apply>
+                    <apply>
+                      <power/>
+                      <ci> NANOG </ci>
+                      <cn type="integer"> 3 </cn>
+                    </apply>
+                  </apply>
+                </apply>
+              </apply>
+              <apply>
+                <divide/>
+                <apply>
+                  <times/>
+                  <cn> 0.37 </cn>
+                  <apply>
+                    <power/>
+                    <ci> OCT4 </ci>
+                    <cn type="integer"> 3 </cn>
+                  </apply>
+                </apply>
+                <apply>
+                  <plus/>
+                  <apply>
+                    <power/>
+                    <cn> 0.5 </cn>
+                    <cn type="integer"> 3 </cn>
+                  </apply>
+                  <apply>
+                    <power/>
+                    <ci> OCT4 </ci>
+                    <cn type="integer"> 3 </cn>
+                  </apply>
+                </apply>
+              </apply>
+            </apply>
+          </math>
+                </kineticLaw>
+      </reaction>
+      <reaction name="-GDF3+0.37*SOX2^3/(0.5^3+SOX2^3)" id="GDF3_synthesis">
+        <listOfModifiers>
+          <modifierSpeciesReference species="GDF3"/>
+          <modifierSpeciesReference species="SOX2"/>
+        </listOfModifiers>
+        <listOfProducts>
+          <speciesReference species="GDF3"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <apply>
+              <plus/>
+              <apply>
+                <minus/>
+                <ci> GDF3 </ci>
+              </apply>
+              <apply>
+                <divide/>
+                <apply>
+                  <times/>
+                  <cn> 0.37 </cn>
+                  <apply>
+                    <power/>
+                    <ci> SOX2 </ci>
+                    <cn type="integer"> 3 </cn>
+                  </apply>
+                </apply>
+                <apply>
+                  <plus/>
+                  <apply>
+                    <power/>
+                    <cn> 0.5 </cn>
+                    <cn type="integer"> 3 </cn>
+                  </apply>
+                  <apply>
+                    <power/>
+                    <ci> SOX2 </ci>
+                    <cn type="integer"> 3 </cn>
+                  </apply>
+                </apply>
+              </apply>
+            </apply>
+          </math>
+                </kineticLaw>
+      </reaction>
+    </listOfReactions>
+  </model>
+</sbml>

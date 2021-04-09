@@ -1,23 +1,38 @@
 # TMELand
-A software tool for modeling and visualization of Waddington's epigenetic landscape and state transition paths based on dynamical models of gene regulatory network (GRN).
+TMELand is a software tool for modeling and visualization of Waddington's epigenetic landscape and state transition paths based on dynamical models of gene regulatory network (GRN).
 
-Our paper has been submitted, you can refer to [User Manual](https://github.com/JieZheng-ShanghaiTech/TMELand/blob/main/TMELand%20Manual.pdf) for more details.
+Our paper on TMELand has been submitted:  
+[Lin Zhu, Xin Kang, Pei Lin, Chunhe Li and Jie Zheng. TMELand: Quantitative modeling and visualization of Waddington’s epigenetic landscape and state transition paths[J], 2021.]    
+For more details, please check out the [User Manual](https://github.com/JieZheng-ShanghaiTech/TMELand/blob/main/TMELand%20Manual.pdf).
+
 
 
 
 ### Installation
-We recommend using [conda](https://conda.io/docs/) to create a virtual environment and then install packages in the main directory. However, you can also use pip to install necessary packages directly.
+TMELand is developed by Python, you can install `python==3.7` or install [Anaconda](https://docs.anaconda.com/anaconda/install/) and create virtual environment.
 
 ```
+# (Only needed for conda) create virtual environment and activate it
 $ conda create –n TMELand_env python==3.7
 $ conda activate TMELand_env
+
+# Install packages using requirements.txt file in the current path
 $ pip install -r requirements.txt
 ```
 
 
 
 ### Launch
-For Windows and Ubuntu OS
+
+You can launch TMELand in the terminal after finish installation.
+
+For Windows:
+```
+$ python ./MainPage.py
+```
+
+For Ubuntu:
+
 ```
 $ python ./MainPage.py
 ```
@@ -58,5 +73,13 @@ To draw a landscape, there are three steps:
 * Drawing transition paths
 
 After drawing the landscape, you can draw state transition paths between two attractors by specifying time range, granularity, beginning and ending attractors. You can also draw paths after load a TME model, and update landscape will keep paths.
+
+
+
+#### Summary
+
+Here's a summary pipeline:
+
+![](./resource/Quick_tutorial.jpg)
 
 For more details, please refer to the [User Manual](https://github.com/JieZheng-ShanghaiTech/TMELand/blob/main/TMELand%20Manual.pdf).

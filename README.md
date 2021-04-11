@@ -49,13 +49,31 @@ $ python ./MainPageForMac.py
 #### Input: 
 The TMELand supports TSV, ODE, SBML, and TME files.
 
-* TSV: TSV (Tab-separated values) stores the interaction relationship among nodes in gene regulatory network, activation is `+`, inhibition is `-`. Please refer to a file in the `./TSV_models/` directory to find an example.
+* TSV: TSV (Tab-separated values) format file stores a collection of interaction relationships of genes with a specific definition, which can reflect the gene regulatory network topology. 
 
-* ODE: ODE (XPPAUT ODE) refers to the `.ode` format, which is a set of ODE equations. Please refer to the `./ODE_SBML_models/` directory to find an example.
+  Each line of a TSV file includes two gene names and one interaction relationship between these two genes, ‘+’ represents the first gene activates the second gene, and ‘-’ represents the first gene inhibits the second gene. Each item in a line is separated by a tab. An example with instructions is given as follow:
 
-* SBML: You can also provide your self-defined ODE functions in SBML format. TMELand supports SBML models come from the BioModels website.
+  <img src="./resource/tsv_example.png" style="zoom:40%;" />
 
-* TME: TME is a self-defined format to save computed models. After you construct a landscape or a landscape with paths, you can save it as a TME model for the next reloading.
+* XPPAUT ODE: XPPAUT ODE format file consists of a set of ODE equations and correlated parameters. In our support ODE models, you can follow the following rules. (XPPAUT ODE format file parsing code refer to https://github.com/MCLand-NTU/MCLand)
+
+  1. (Optional) Ignore lines that begin with ‘#’ or ‘@’;
+
+  2. (Optional) Define parameters by using a line starting with ‘par’, multiple parameters are separated by a comma;
+
+  3. (Momentary) Define differential equations by starting with ‘Var’=’ or ‘dVar/dt=’, Var refers to a variable;
+
+  4. (Optional) Define constant by starting with ‘const’;
+
+  5. (Optional) Define initial values by starting with ‘init’;
+     This is an example:
+
+     <img src="./resource/ode_example.png" style="zoom:70%;" />
+
+* SBML: [SBML](https://en.wikipedia.org/wiki/SBML) is an abbreviation of Systems Biology Markup Language. It is a representation format, based on XML, for communicating and storing computational models of biological processes. Generally, we can use an SBML file that describes transcriptional regulations from the BioModels Database. [BioModels](https://pubmed.ncbi.nlm.nih.gov/16381960/) Database contains rich mathematical models of biological systems with a specific format. For more information, please refer to https://www.ebi.ac.uk/biomodels/.
+  Due to the complication of SBML, we don’t show an example here. You can refer to the ‘ODE_SBML_models’ folder in TMELand code for a full example.
+
+* TME: TME is a self-defined model using JSON format, which is used to save computed model and next reloading. We can save landscape only or landscape with paths.
 
 #### Main functions:
 * Model visualization
@@ -75,11 +93,5 @@ To draw a landscape, there are three steps:
 After drawing the landscape, you can draw state transition paths between two attractors by specifying time range, granularity, beginning and ending attractors. You can also draw paths after load a TME model, and update landscape will keep paths.
 
 
-
-#### Summary
-
-Here's a summary pipeline:
-
-![](./resource/Quick_tutorial.jpg)
 
 For more details, please refer to the [User Manual](https://github.com/JieZheng-ShanghaiTech/TMELand/blob/main/TMELand%20Manual.pdf).

@@ -24,11 +24,11 @@ $ pip install -r requirements.txt
 
 ### Launch
 
-You can launch TMELand in the terminal after finish installation.
+You can launch TMELand in the command prompt (Windows) or terminal (Unix) after finish installation.
 
 For Windows:
 ```
-$ python ./MainPage.py
+> python ./MainPage.py
 ```
 
 For Ubuntu:

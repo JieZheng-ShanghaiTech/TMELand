@@ -3,7 +3,7 @@ TMELand is a software tool for modeling and visualization of Waddington's epigen
 
 Our paper on TMELand has been submitted:  
 [Lin Zhu, Xin Kang, Chunhe Li and Jie Zheng. TMELand: An end-to-end pipeline for quantification and visualization of Waddington’s epigenetic landscape based on gene regulatory network, 2022.]    
-For more details, please check out the [User Manual](https://github.com/JieZheng-ShanghaiTech/TMELand/blob/main/TMELand%20Manual.pdf).
+For more details, please check out the [User Manual](https://github.com/JieZheng-ShanghaiTech/TMELand/blob/main/User%20Manual.pdf).
 
 
 

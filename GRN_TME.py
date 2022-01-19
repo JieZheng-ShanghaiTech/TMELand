@@ -65,7 +65,10 @@ class Force():
         F = np.empty(self.Sys_Dim,dtype=object)
 
         for i in range(self.Sys_Dim):
-            F[i] = x[i]+'\'='+'+'.join(H[i, :].tolist())+'-'+str(self.Degrade_rate[i]) +'*' +x[i]  # dx/dt  F(i)=f(x[i]) 只有一个变量，没有其他变量
+            tmp=H[i, :].tolist()
+            while '' in tmp:
+                tmp.remove('')
+            F[i] = x[i]+'\'='+'+'.join(tmp)+'-'+str(self.Degrade_rate[i]) +'*' +x[i]  # dx/dt  F(i)=f(x[i]) 只有一个变量，没有其他变量
         return F
 
 
@@ -124,7 +127,7 @@ def grn_find_stable(params):
 
     # print generated ode equations. You can use this to obtain inner generated equations.
     # You need a further editing because of some string problems.
-    # print(force.get_odeEquations(params['Genes']))
+    # grn_odes=force.get_odeEquations(params['Genes'])
 
     # progress bar setting
     progressWin=tk.Tk()
@@ -188,6 +191,15 @@ def grn_find_stable(params):
     # we can get all of the stable_points and their weight
     wei = num[:, 1] / params['cycle']  # RETURN
     return stable_points, sigma, wei
+
+def grn_simulation(params):
+    t = np.linspace(0, params['Tfinal'], num=100) # [1,2,3]
+    results=[] # [[traj1],[traj2]]
+    force=Force(params)
+    for i in range(params['cycle']):
+        x0 = params['xmax'] * np.random.rand(params['Sys_Dim'])    # initial point
+        results.append(odeint(force.get_force, x0, t))
+    return t,results
 
 # %%
 def multi_norm(x, x0, sigma, n):
@@ -284,6 +296,8 @@ def grn_ss_path(start, ending, params):
     if if_remesh == 1 and q > qmin:
         alphak = np.insert(np.cumsum(w * delt / np.sum(w * delt)), 0, 0.)
         alphaold = np.linspace(0, 1, params['pointInPath'])  # need to search
+        print(alphak)
+        print(np.linspace(-2.5, 2.5, params['pointInPath']))
         Tnew = np.interp(alphaold, alphak, np.linspace(-2.5, 2.5, params['pointInPath'])) # 2.5???
         phi = scipy.interpolate.spline(np.linspace(-2.5, 2.5, params['pointInPath']), whole_path, Tnew)
         return phi,action

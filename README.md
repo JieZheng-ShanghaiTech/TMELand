@@ -2,7 +2,7 @@
 TMELand is a software tool for modeling and visualization of Waddington's epigenetic landscape and state transition paths based on dynamical models of gene regulatory network (GRN).
 
 Our paper on TMELand has been submitted:  
-[Lin Zhu, Xin Kang, Pei Lin, Chunhe Li and Jie Zheng. TMELand: Quantitative modeling and visualization of Waddington’s epigenetic landscape and state transition paths[J], 2021.]    
+[Lin Zhu, Xin Kang, Chunhe Li and Jie Zheng. TMELand: An end-to-end pipeline for quantification and visualization of Waddington’s epigenetic landscape based on gene regulatory network, 2022.]    
 For more details, please check out the [User Manual](https://github.com/JieZheng-ShanghaiTech/TMELand/blob/main/TMELand%20Manual.pdf).
 
 
@@ -24,30 +24,18 @@ $ pip install -r requirements.txt
 
 ### Launch
 
-You can launch TMELand in the command prompt (Windows) or terminal (Unix) after finish installation.
-
-For Windows:
-```
-> python ./MainPage.py
-```
-
-For Ubuntu:
+You can launch TMELand in the terminal after finish dependency package installation.
 
 ```
-$ python ./MainPage.py
-```
-
-For macOS:
-
-```
-$ python ./MainPageForMac.py
+$ python ./Main.py
 ```
 
 
 
 ### Usages
+
 #### Input: 
-The TMELand supports TSV, XPPAUT ODE, SBML, and TME files.
+The TMELand supports TSV, XPPAUT ODE, SBML, and single-cell gene expression data.
 
 * TSV: TSV (Tab-separated values) format file stores a collection of interaction relationships of genes with a specific definition, which can reflect the gene regulatory network topology. 
 
@@ -77,6 +65,8 @@ The TMELand supports TSV, XPPAUT ODE, SBML, and TME files.
 * SBML: [SBML](https://en.wikipedia.org/wiki/SBML) is an abbreviation of Systems Biology Markup Language. It is a representation format, based on XML, for communicating and storing computational models of biological processes. Generally, we can use an SBML file that describes transcriptional regulations from the BioModels Database. [BioModels](https://pubmed.ncbi.nlm.nih.gov/16381960/) Database contains rich mathematical models of biological systems with a specific format. For more information, please refer to https://www.ebi.ac.uk/biomodels/.
   Due to the complication of SBML, we don’t show an example here. You can refer to the ‘ODE_SBML_models’ folder in TMELand code for a full example.
 
+* Single-cell data: for single-cell data, user should provide gene expression matrix and a pseudotime list of cells.
+  
 * TME: TME is a self-defined model using JSON format, which is used to save computed model and next reloading. We can save landscape only or landscape with paths.
 
 #### Main functions:
@@ -86,7 +76,7 @@ After loading your models, you can obtain the parsed and visualized results of y
 * Drawing landscape
 
 To draw a landscape, there are three steps:
-1. **Form ODE equations** (only needed for TSV models): by `Dynamics setting` button to generate ODE equations.
+1. **Form ODE equations** (only needed for TSV models): by `DE-based GRN` button to generate ODE equations.
 
 2. **Draw**: this step corresponding to the `Draw` button, which includes simulation and default visualization (using the first two marker genes and setting visualization range from 0 to 3).
 

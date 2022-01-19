@@ -1,0 +1,16 @@
+miR-200	ZEB	-
+ZEB	ZEB	+
+ZEB	miR-145	-
+miR-145	ZEB	-
+ZEB	miR-200	-
+P53	P53	+
+P53	miR-200	+
+P53	miR-145	+
+OCT4	miR-200	+
+OCT4	OCT4	+
+miR-145	OCT4	-
+OCT4	miR-145	-
+P53	OCT4	-
+miR-145	MDM2	-
+P53	MDM2	+
+MDM2	P53	-

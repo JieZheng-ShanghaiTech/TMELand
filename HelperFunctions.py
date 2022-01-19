@@ -1,7 +1,15 @@
 # encoding=utf-8
 from libsbml import *
 import numpy as np
-
+import tkinter as tk
+from tkinter import ttk
+from pyecharts.globals import SymbolType
+import PIL.Image
+import PIL.ImageTk
+import os
+import socket
+from psutil import process_iter
+from signal import SIGTERM
 '''
 This part of code are partially referred to https://github.com/MCLand-NTU/MCLand/blob/master/MCLand_ver1.py. The specific referred
 positions are marked with ###
@@ -30,7 +38,7 @@ def parseSBML(file):
         if species.getBoundaryCondition()==True:
             continue
         variableNames.append(species.getId())
-    print('variable names: ',variableNames)
+    # print('variable names: ',variableNames)
     odeParams['genes']=variableNames
     jacCode = jacCode + 'from sympy import Matrix,symbols\n'
     jacCode = jacCode + 'import numpy as np\n'
@@ -50,24 +58,24 @@ def parseSBML(file):
     for i in range(model.getNumCompartments()):
         element=model.getCompartment(i)
         sbmlCompartments.append('{0} = {1}\n'.format(element.getId(), element.getSize()))
-    print('sbmlCompartments: ',sbmlCompartments)
+    # print('sbmlCompartments: ',sbmlCompartments)
 
     sbmlParameters=[]
     for i in range(model.getNumParameters()):
         element=model.getParameter(i)
         sbmlParameters.append('{0} = {1}\n'.format(element.getId(), element.getValue()))
-    print('sbmlParameters: ',sbmlParameters)
+    # print('sbmlParameters: ',sbmlParameters)
 
     sbmlRhs=[]
     sbmlReactions=[]
     variables={}
     for i in range(model.getNumSpecies()):
-        print('i: ',i)
+        # print('i: ',i)
         species=model.getSpecies(i)
-        print('species: ',species)
+        # print('species: ',species)
         if species.getBoundaryCondition() == True or (species.getId() in variables):
-            print('species id: ',species.getId())
-            print('species boundary condition: ',species.getBoundaryCondition())
+            # print('species id: ',species.getId())
+            # print('species boundary condition: ',species.getBoundaryCondition())
             continue
         # initialization
         variables[species.getId()]=[]
@@ -84,7 +92,7 @@ def parseSBML(file):
                 variables[species.getId()].append('-{0}'.format(reaction.getId()))
             else:
                 variables[species.getId()].append('-({0})*{1}'.format(reactant.getStoichiometry(), reaction.getId()))
-                print('reaction ID: ',reaction.getId())
+                # print('reaction ID: ',reaction.getId())
         for j in range(reaction.getNumProducts()):
             product=reaction.getProduct(j)
             species=model.getSpecies(product.getSpecies())
@@ -97,14 +105,14 @@ def parseSBML(file):
 
     variableList=list(variables.keys())
     correct_variableName = []
-    print('Reading reactions...')
+    # print('Reading reactions...')
     for i in range(len(variables.keys())):
-        print('variable index: ',i)
-        print('variable name: ',variableNames[i])
+        # print('variable index: ',i)
+        # print('variable name: ',variableNames[i])
         sbmlRhs.append('d'+variableNames[i]+'/dt=')
         for eqn in variables[variableList[i]]:
-            print('equation: ',eqn)
-            print(variables[variableList[i]])
+            # print('equation: ',eqn)
+            # print(variables[variableList[i]])
             sbmlRhs.append(' + ({0})'.format(eqn))
 
         # For constants where there is ode rhs is empty, set the ode rhs to 0.
@@ -115,7 +123,7 @@ def parseSBML(file):
             # set the constant based on their InitialConcentration
             element=model.getSpecies(i)
             constants[element.getId()]=element.getInitialAmount()
-            print('initial concentration: ',element.getInitialAmount())
+            # print('initial concentration: ',element.getInitialAmount())
         else: # 非常数变量
             correct_variableName.append(variableNames[i])
 
@@ -138,8 +146,8 @@ def parseSBML(file):
             strTmp=strTmp+sbmlRhs[ele_index]
         sbmlTmp.append(strTmp)
     sbmlRhs=sbmlTmp # 将每个ODE方程的每一部分粘贴在一起
-    print('sbmlRhs: ',sbmlRhs)
-    print('correct_variableName: ',correct_variableName)
+    # print('sbmlRhs: ',sbmlRhs)
+    # print('correct_variableName: ',correct_variableName)
 
     variableNames=correct_variableName
 
@@ -159,7 +167,7 @@ def parseSBML(file):
     for i in range(model.getNumSpecies()):
         element=model.getSpecies(i)
         sbmlInitConds[element.getId()]=element.getInitialConcentration()
-    print('initial conditions: ',sbmlInitConds)
+    # print('initial conditions: ',sbmlInitConds)
     #################################################### End
 
     # show ODE code and differentiation of ODE code
@@ -325,28 +333,84 @@ def parseODE(file):
 
     return odeShow, odeCode, jacCode, odeParams
 
-
-
-
-
-
-# parseODE('E:\TME_GUI\ODE models\Ferrell_2011_3_genes.ode')
-# show,odecode,jaccode,params=parseSBML('E:\TME_GUI\SBML models\Li_and_Wang_CancerRes_2015__created_using_SBMLeditor.xml')
-#
-# print('----------------')
-# print(show)
-# print('----------------')
-# print(odecode)
-# print('----------------')
-# print(jaccode)
-# print('----------------')
-# print(params)
-
 def changeNparray2List(dic):
     for i in dic.keys():
         if isinstance(dic[i],np.ndarray):
             dic[i]=dic[i].tolist()
     return dic
 
+def getPoppedWindow(father,width,height,title):
+    settingWin = tk.Toplevel(father)
+    ww = width
+    hh = height
+    sw = settingWin.winfo_screenwidth()
+    sh = settingWin.winfo_screenheight()
+    settingWin.geometry('%dx%d+%d+%d' % (ww, hh, (sw - ww) / 2, (sh - hh) / 2))
+    settingWin.title(title)
+    return settingWin
+
+def getFrame(father,width,height,highlightbackground,highlightcolor,highlightthickness):
+    frame = tk.Frame(father, width=width, height=height, highlightbackground=highlightbackground,
+                              highlightcolor=highlightcolor, highlightthickness=highlightthickness)
+    return frame
+
+def func2color(func):
+    if func=='+':
+        return "red"
+    elif func=='-':
+        return "black"
+    else:
+        return None
+
+def getNodeColor(gene,grn):
+    grn=grn.tolist()
+    if [gene,gene,'+'] in grn:
+        return "#FF0000" # self activation
+    if [gene, gene, '-'] in grn:
+        return "#000000" # self inhibition
+    return "#4169E1"  # non self regulation
+
+def get_img(path,w,h):
+    img = PIL.Image.open(path)
+    img = img.resize((w,h), PIL.Image.ANTIALIAS)
+    img = PIL.ImageTk.PhotoImage(img)
+    return img
+
+def dataFrame2comboboxList(df):
+    rs=df.values.tolist()
+    rs=[r[0]+" "+r[2]+" "+r[1] for r in rs]
+    return rs
+
+def edit_search(ety,listt,l):
+    inp = ety.widget.get()
+    if inp == '':
+        data = listt
+    else:
+        data = []
+        for item in listt:
+            if inp.lower() in item.lower():
+                data.append(item)
+    edit_fill(l,data)
+
+def edit_fill(l,data):
+    l.delete(0, 'end')
+    for item in data:
+        l.insert('end', item)
+
+def getSubnetGenes(path):
+    data=np.loadtxt(path,dtype=str)
+    data=[line.strip() for line in data]
+    return data
+
+def killPort(port):
+    os.system("kill -9 $(lsof -t -i:"+str(port)+")")
 
 
+def checkPort(port):
+    s = socket.socket(socket.AF_INET,socket.SOCK_STREAM)
+    try:
+        s.connect(('127.0.0.1',int(port)))
+        s.shutdown(2)
+        return True # be taken
+    except:
+        return False # not be taken

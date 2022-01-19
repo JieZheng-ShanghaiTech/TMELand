@@ -113,7 +113,16 @@ def ode_find_stable(params,ode_code,jacCode):
 
     return stable_points, sigma, wei
 
-
+def ode_simulation(params,ode_code,jacCode):
+    if 'np.array(])' in ode_code:
+        tkinter.messagebox.showwarning(title='Warning', message='The system contains 0 reaction!')
+    exec(ode_code,globals()) # get get_force function
+    t = np.linspace(0, params['Tfinal'], num=100)  # time series
+    results=[]
+    for i in range(params['cycle']):
+        x0 = params['xmax'] * np.random.rand(params['Sys_Dim'])    # initial point
+        results.append(odeint(get_force, x0, t))
+    return t,results
 
 # %%
 def multi_norm(x, x0, sigma, n):

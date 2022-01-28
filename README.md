@@ -2,7 +2,7 @@
 TMELand is a software tool for modeling and visualization of Waddington's epigenetic landscape and state transition paths based on dynamical models of gene regulatory network (GRN).
 
 <p align="center">
-<img src="./resource/landscape.png" style="zoom:60%;" />
+<img src="./resource/landscape.png" style="zoom:40%;" />
 </p>
 
 Our paper on TMELand has been submitted:  
@@ -53,7 +53,7 @@ The TMELand supports TSV, XPPAUT ODE, SBML, and single-cell gene expression data
   Each line of a TSV file includes two gene names and one interaction relationship between these two genes, ‘+’ represents the first gene activates the second gene, and ‘-’ represents the first gene inhibits the second gene. Each item in a line is separated by a tab. An example with instructions is given as follow:
 
   <p align="center">
-  <img src="./resource/tsv_example.png" style="zoom:100%;" />
+  <img src="./resource/tsv_example.png" style="zoom:70%;" />
   </p>
 
 * XPPAUT ODE: XPPAUT ODE format file consists of a set of ODE equations and correlated parameters. In our support ODE models, you can follow the following rules. (XPPAUT ODE format file parsing code refer to https://github.com/MCLand-NTU/MCLand)

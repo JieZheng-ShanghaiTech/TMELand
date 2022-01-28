@@ -1,7 +1,9 @@
 # TMELand
 TMELand is a software tool for modeling and visualization of Waddington's epigenetic landscape and state transition paths based on dynamical models of gene regulatory network (GRN).
 
-<img src="./resource/landscape.png" style="zoom:70%;" />
+<p align="center">
+<img src="./resource/landscape.png" style="zoom:60%;" />
+</p>
 
 Our paper on TMELand has been submitted:  
 [Lin Zhu, Xin Kang, Chunhe Li and Jie Zheng. TMELand: An end-to-end pipeline for quantification and visualization of Waddington’s epigenetic landscape based on gene regulatory network, 2022.]    
@@ -50,7 +52,9 @@ The TMELand supports TSV, XPPAUT ODE, SBML, and single-cell gene expression data
 
   Each line of a TSV file includes two gene names and one interaction relationship between these two genes, ‘+’ represents the first gene activates the second gene, and ‘-’ represents the first gene inhibits the second gene. Each item in a line is separated by a tab. An example with instructions is given as follow:
 
+  <p align="center">
   <img src="./resource/tsv_example.png" style="zoom:70%;" />
+  </p>
   
 * XPPAUT ODE: XPPAUT ODE format file consists of a set of ODE equations and correlated parameters. In our support ODE models, you can follow the following rules. (XPPAUT ODE format file parsing code refer to https://github.com/MCLand-NTU/MCLand)
 
@@ -65,7 +69,9 @@ The TMELand supports TSV, XPPAUT ODE, SBML, and single-cell gene expression data
   5. (Optional) Define initial values by starting with ‘init’;
      This is an example:
 
-	<img src="./resource/ode_example.png" style="zoom:70%;" />
+	<p align="center">
+  <img src="./resource/ode_example.png" style="zoom:80%;" />
+  </p>
   
 * SBML: [SBML](https://en.wikipedia.org/wiki/SBML) is an abbreviation of Systems Biology Markup Language. It is a representation format, based on XML, for communicating and storing computational models of biological processes. Generally, we can use an SBML file that describes transcriptional regulations from the BioModels Database. [BioModels](https://pubmed.ncbi.nlm.nih.gov/16381960/) Database contains rich mathematical models of biological systems with a specific format. For more information, please refer to https://www.ebi.ac.uk/biomodels/.
   Due to the complication of SBML, we don’t show an example here. You can refer to the ‘ODE_SBML_models’ folder in TMELand code for a full example.

@@ -24,38 +24,38 @@ def dict2odesdf(dic):
 
 
 def showDEsDescribedGRN(father,des):
-    column_names = ['Gene','Equation']
-    xx = tk.Scrollbar(father, orient="horizontal")
-    yy = tk.Scrollbar(father, orient="vertical")
-    table = ttk.Treeview(father, columns=tuple(column_names), xscrollcommand=xx.set, yscrollcommand=yy.set)
-    xx.pack(side="bottom", fill="x")
-    yy.pack(side="right", fill="y")
-    for name in column_names:
-        table.heading(name, text=name)
-    table['show'] = 'headings'
-
-    xx.config(command=table.xview)
-    yy.config(command=table.yview)
-
-    table.column('Gene', width=70)
-    table.column('Equation', width=600)
-
-    n_des=des.values.shape[0]
-    for k in range(n_des):
-        table.insert('', k , text="", values=tuple(des.values[k]))
+    # column_names = ['Gene','Equation']
+    # xx = tk.Scrollbar(father, orient="horizontal")
+    # yy = tk.Scrollbar(father, orient="vertical")
+    # table = ttk.Treeview(father, columns=tuple(column_names), xscrollcommand=xx.set, yscrollcommand=yy.set)
+    # xx.pack(side="bottom", fill="x")
+    # yy.pack(side="right", fill="y")
+    # for name in column_names:
+    #     table.heading(name, text=name)
+    # table['show'] = 'headings'
+    #
+    # xx.config(command=table.xview)
+    # yy.config(command=table.yview)
+    #
+    # table.column('Gene', width=70)
+    # table.column('Equation', width=600)
+    #
+    # n_des=des.values.shape[0]
+    # for k in range(n_des):
+    #     table.insert('', k , text="", values=tuple(des.values[k]))
 
 
     # based on tktable developed
-    # data = odesdf2dict(des)
-    # xx = tk.Scrollbar(father, orient="horizontal")
-    # yy = tk.Scrollbar(father, orient="vertical")
-    # table = TableCanvas(father, data=data,
-    #                     cellwidth=200,cellbackgr='#e3f698',
-    #                     thefont=('Arial', 12), rowheight=25,rowheaderwidth=30,
-    #                     rowselectedcolor='yellow', read_only=False,width=20000,xscrollcommand=xx.set, yscrollcommand=yy.set)
-    #
-    #
-    # table.show()
-    # return table
+    data = odesdf2dict(des)
+    xx = tk.Scrollbar(father, orient="horizontal")
+    yy = tk.Scrollbar(father, orient="vertical")
+    table = TableCanvas(father, data=data,
+                        cellwidth=200,cellbackgr='#e3f698',
+                        thefont=('Arial', 12), rowheight=25,rowheaderwidth=30,
+                        rowselectedcolor='yellow', read_only=False,width=20,xscrollcommand=xx.set, yscrollcommand=yy.set)
 
-    table.pack(fill="both", expand=1)
+
+    table.show()
+    return table
+
+    # table.pack(fill="both", expand=1)

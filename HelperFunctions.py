@@ -3,12 +3,12 @@ from libsbml import *
 import numpy as np
 import tkinter as tk
 from tkinter import ttk
-from pyecharts.globals import SymbolType
+# from pyecharts.globals import SymbolType
 import PIL.Image
 import PIL.ImageTk
 import os
 import socket
-from psutil import process_iter
+# from psutil import process_iter
 from signal import SIGTERM
 '''
 This part of code are partially referred to https://github.com/MCLand-NTU/MCLand/blob/master/MCLand_ver1.py. The specific referred

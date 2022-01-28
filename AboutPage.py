@@ -18,5 +18,5 @@ def getAboutContent():
             'Platform: cross-platform (have been tested on Windows 10, Ubuntu 18.04, and MAC OS)\n\n' \
             'Language: python 3.7\n\n' \
             'License: GPL v3.0\n\n' \
-            'Contact: If there is any bug, error or improvement when you use, please post your issue on the GitHub website (https://github.com/Cinderella0709/TME_GUI) or send your suggestions or bug reports to zhengjie@shanghaitech.edu.cn or chunheli@fudan.edu.cn.'
+            'Contact: If there is any bug, error or improvement when you use, please post your issue on the GitHub website (https://github.com/JieZheng-ShanghaiTech/TMELand) or send your suggestions or bug reports to zhengjie@shanghaitech.edu.cn or chunheli@fudan.edu.cn.'
     return about

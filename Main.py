@@ -18,11 +18,11 @@ import PIL.ImageTk
 from matplotlib.figure import Figure
 from matplotlib.backends.backend_tkagg import FigureCanvasTkAgg
 from matplotlib.backends._backend_tk import NavigationToolbar2Tk
-from pyecharts import options as opts
-from pyecharts.charts import Graph
-from cefpython3 import cefpython as cef
-from pyecharts.globals import SymbolType
-from pyecharts import options as opt
+# from pyecharts import options as opts
+# from pyecharts.charts import Graph
+# from cefpython3 import cefpython as cef
+# from pyecharts.globals import SymbolType
+# from pyecharts import options as opt
 import scipy
 import webbrowser
 from jaal import Jaal
@@ -61,6 +61,7 @@ class MainPage(object):
         self.params={}
         self.inputChoice=tk.StringVar()
         self.loadModelType='' # four types: ODE(SBML), GRN, seq, TME
+        self.TMEModelType=''
         self.loadModelToplogy=pd.DataFrame() # store model GRN topology: from to sign weight
         self.loadModelDEs=pd.DataFrame() # store model GRN DEs, params and ODEs
         self.loadModelPaths={'ODE':'','GRN':'','TME':'','seq_expr':'','seq_time':'','seq_gnames':'','seq_cnames':''}
@@ -78,6 +79,23 @@ class MainPage(object):
         # widget
         self.createMainPage()
 
+    def deleteContent(self):
+        self.params = {}
+        self.loadModelType = ''  # four types: ODE(SBML), GRN, seq, TME
+        self.TMEModelType = ''
+        self.loadModelToplogy = pd.DataFrame()  # store model GRN topology: from to sign weight
+        self.loadModelDEs = pd.DataFrame()  # store model GRN DEs, params and ODEs
+        self.loadModelPaths = {'ODE': '', 'GRN': '', 'TME': '', 'seq_expr': '', 'seq_time': '', 'seq_gnames': '',
+                               'seq_cnames': ''}
+        self.ODEModelOdeCode = ''
+        self.ODEModelJacCode = ''
+        self.Global_sp = None
+        self.Global_sig = None
+        self.Global_w = None
+        self.savepath = {}
+        self.pathsAction = {}
+        self.drawPathCnt = 0  # control path color
+        self.subnetGenes = []
 
     def createMainPage(self):
 
@@ -116,7 +134,7 @@ class MainPage(object):
         l4.grid(row=0,column=2)
         tk.Button(model_frame,text='GRN topology', font=('normal', 10),bg = "white", fg = "black", command=self.GRNToplogy).grid(row=1,column=0,padx=5)
         tk.Button(model_frame,text='Topology editing', font=('normal', 10),bg = "white", fg = "black", command=lambda: self.topologyEditing(self.root)).grid(row=1,column=1,padx=5)
-        tk.Button(model_frame,text='DEs described GRN', font=('normal', 10), bg="white", fg="black",command=lambda: self.GRNDEs(self.root,4,0.7,1,1,0.5,1)).grid(row=1,column=2,padx=5)
+        tk.Button(model_frame,text='DE-based GRN', font=('normal', 10), bg="white", fg="black",command=lambda: self.GRNDEs(self.root,4,0.7,1,1,0.5,1)).grid(row=1,column=2,padx=5)
         model_frame.pack(fill="both",padx=30,pady=10)
         l2=tk.Label(self.root, image=img)
         l2.image=img
@@ -147,6 +165,7 @@ class MainPage(object):
             if self.inputChoice.get() == '':
                 tkinter.messagebox.showwarning(title='Warning', message='Please choose a model type!')
             else:
+                self.deleteContent()
                 self.loadModelType = self.inputChoice.get()
                 print("The loaded model type is:", self.loadModelType)
                 file = askopenfilename(initialdir=os.getcwd() + './ODE_SBML_models/', title="Select a ODE/SBML model",
@@ -173,10 +192,12 @@ class MainPage(object):
                     # parse ODE: Obtain GRN topology
                     v1.set(os.path.basename(file)) # once uploaded file display in the label, it means successful.
 
+
         def uploadTSV():
             if self.inputChoice.get() == '':
                 tkinter.messagebox.showwarning(title='Warning', message='Please choose a model type!')
             else:
+                self.deleteContent()
                 self.loadModelType = self.inputChoice.get()
                 print("The loaded model type is:", self.loadModelType)
                 file = askopenfilename(initialdir=os.getcwd() + './TSV_models/', title="Select a Text model",
@@ -197,10 +218,12 @@ class MainPage(object):
                     # parse GRN: Obtain GRN DEs
                     v2.set(os.path.basename(file))
 
+
         def uploadTME():
             if self.inputChoice.get() == '':
                 tkinter.messagebox.showwarning(title='Warning', message='Please choose a model type!')
             else:
+                self.deleteContent()
                 self.loadModelType = self.inputChoice.get()
                 print("The loaded model type is:", self.loadModelType)
                 file = askopenfilename(initialdir=os.getcwd() + './TME_models/', title="Select a TME model",
@@ -213,11 +236,36 @@ class MainPage(object):
                     self.root.title('TMELand - ' + os.path.basename(self.loadModelPaths['TME']))
                     print('The loaded model name is:', os.path.basename(self.loadModelPaths['TME']))
                     v3.set(os.path.basename(file))
+                    # parse TME JSON data
+                    with open(self.loadModelPaths['TME'], 'r') as fr:
+                        data = json.load(fr)
+                    self.TMEModelType = data['modelType']
+                    self.loadModelToplogy=pd.DataFrame(data['modelTopology'],columns=['regulator', 'target', 'func','weight'])
+                    self.loadModelDEs=pd.DataFrame(data['modelDEs'])
+                    self.params = data['defaultParams']
+                    self.Global_sp = np.array(data['stablePoints'])
+                    self.Global_sig = np.array(data['sigma'])
+                    self.Global_w = np.array(data['weight'])
+                    self.ODEModelOdeCode = data['ODEModelOdeCode']
+                    self.ODEModelJacCode = data['ODEModelJacCode']
+                    self.savepath = data['allpath']
+                    if self.TMEModelType=='GRN' or self.TMEModelType=='seq':
+                        self.params['IM'] = np.array(self.params['IM'], dtype=int)
+                        self.params['Hill_fn'] = np.array(self.params['Hill_fn'], dtype=float)
+                        self.params['TM'] = np.array(self.params['TM'], dtype=float)
+                        self.params['Act_Inh'] = np.array(self.params['Act_Inh'], dtype=float)
+                        self.params['Degrade_rate'] = np.array(self.params['Degrade_rate'], dtype=float)
+                    self.params['y_min']=np.array(self.params['y_min'],dtype=float)
+                    self.params['y_max'] = np.array(self.params['y_max'], dtype=float)
+                    self.params['vari_spec'] = np.array(self.params['vari_spec'], dtype=float)
+
+
 
         def uploadSeq_expr():
             if self.inputChoice.get() == '':
                 tkinter.messagebox.showwarning(title='Warning', message='Please choose a model type!')
             else:
+                self.deleteContent()
                 self.loadModelType = self.inputChoice.get()
                 print("The loaded model type is:", self.loadModelType)
                 file = askopenfilename(initialdir=os.getcwd() + './scRNAseq_models/',title="Select gene expression data",filetypes=[("TXT Files", "*.txt")])
@@ -345,24 +393,34 @@ class MainPage(object):
                 break
 
     def GRNToplogy(self):
-        # check the port
-        if checkPort(8050):
-            # pop a window ask whether kill the cresponding process
-            askWin=getPoppedWindow(father=self.root,width=230,height=130,title='Port Problem')
-            tk.Message(askWin, text="TMELand detects port 8050 has been taken, would you want to end that process immediately?", bg="white", justify=tk.LEFT,
-                       highlightbackground='black',width=200,
-                       highlightcolor='black', highlightthickness=1).grid(row=0,columnspan=2,padx=10,pady=10)
-            def yes():
-                killPort(8050)
-                self.callJall()
-                askWin.destroy()
-            tk.Button(askWin,text="Yes", command=yes).grid(row=1,column=0,padx=10,pady=10)
-            def no():
-                tk.messagebox.showwarning(title='Warning', message="Please end the process on port 8050 to get the latest data!")
-                askWin.destroy()
-            tk.Button(askWin,text="No",command=no).grid(row=1,column=1,padx=10,pady=10)
+        if self.loadModelType=='ODE' or (self.loadModelType=='TME' and self.TMEModelType=='ODE'):
+            tk.messagebox.showerror(title='Error', message="TMELand doesn't support topology parsing for ODE-based GRN models currently!")
         else:
-            self.callJall()
+            # check the port
+            if checkPort(8050):
+                # pop a window ask whether kill the cresponding process
+                askWin = getPoppedWindow(father=self.root, width=230, height=130, title='Port Problem')
+                tk.Message(askWin,
+                           text="TMELand detects port 8050 has been taken, would you want to end that process immediately?",
+                           bg="white", justify=tk.LEFT,
+                           highlightbackground='black', width=200,
+                           highlightcolor='black', highlightthickness=1).grid(row=0, columnspan=2, padx=10, pady=10)
+
+                def yes():
+                    killPort(8050)
+                    self.callJall()
+                    askWin.destroy()
+
+                tk.Button(askWin, text="Yes", command=yes).grid(row=1, column=0, padx=10, pady=10)
+
+                def no():
+                    tk.messagebox.showwarning(title='Warning',
+                                              message="Please end the process on port 8050 to get the latest data!")
+                    askWin.destroy()
+
+                tk.Button(askWin, text="No", command=no).grid(row=1, column=1, padx=10, pady=10)
+            else:
+                self.callJall()
 
 
         # pyecharts implementation
@@ -409,107 +467,110 @@ class MainPage(object):
 
 
     def topologyEditing(self,father):
-        editWin=getPoppedWindow(father=father,width=400,height=580,title='GRN Topology Editing')
-        # modify self.loadModelToplogy
-        nodeFrame=getFrame(editWin, 360, 200, 'black', 'black', 1)
-        edgeFrame=getFrame(editWin, 360, 200, 'black', 'black', 1)
-        # node frame
-        tk.Label(editWin,text="Node").pack(pady=10)
-        nodeFrame.pack()
-        tk.Label(nodeFrame, text="Gene name:").grid(row=0, column=0, sticky="w",pady=5,padx=5)
-        geneEntry=tk.Entry(nodeFrame, textvariable=tk.StringVar)
-        geneEntry.grid(row=0,column=1,sticky="e",pady=5,padx=5)
-        l1_f = tk.Frame(nodeFrame)
-        l1_f.grid(row=3, column=1, sticky="e", pady=5, padx=5)
-        l1 = tk.Listbox(l1_f, height=3)
-        l2 = ttk.Combobox(edgeFrame)
-        l4 = ttk.Combobox(edgeFrame)
-        def addGene(g):
-            if g in self.params["Genes"]:
-                tk.messagebox.showerror(title='Error', message=g+' already in the list!')
-            else:
-                self.params["Genes"].append(g)
-                # update list choice
-                edit_fill(l1, self.params["Genes"])
-                l2['value'] = tuple(self.params["Genes"])
-                l4['value'] = tuple(self.params["Genes"])
-        def delGene(g):
-            if g in np.unique(self.loadModelToplogy[['regulator','target']].values): # check whether it evolved in the edges of GRN
-                tk.messagebox.showerror(title='Error', message=g + ' evolved in the regulation of other genes!')
-            else:
+        if self.loadModelType == 'ODE' or (self.loadModelType == 'TME' and self.TMEModelType == 'ODE'):
+            tk.messagebox.showerror(title='Error',message="TMELand doesn't support topology editing for ODE-based GRN models currently!")
+        else:
+            editWin=getPoppedWindow(father=father,width=400,height=580,title='GRN Topology Editing')
+            # modify self.loadModelToplogy
+            nodeFrame=getFrame(editWin, 360, 200, 'black', 'black', 1)
+            edgeFrame=getFrame(editWin, 360, 200, 'black', 'black', 1)
+            # node frame
+            tk.Label(editWin,text="Node").pack(pady=10)
+            nodeFrame.pack()
+            tk.Label(nodeFrame, text="Gene name:").grid(row=0, column=0, sticky="w",pady=5,padx=5)
+            geneEntry=tk.Entry(nodeFrame, textvariable=tk.StringVar)
+            geneEntry.grid(row=0,column=1,sticky="e",pady=5,padx=5)
+            l1_f = tk.Frame(nodeFrame)
+            l1_f.grid(row=3, column=1, sticky="e", pady=5, padx=5)
+            l1 = tk.Listbox(l1_f, height=3)
+            l2 = ttk.Combobox(edgeFrame)
+            l4 = ttk.Combobox(edgeFrame)
+            def addGene(g):
                 if g in self.params["Genes"]:
-                    self.params["Genes"].remove(g)
+                    tk.messagebox.showerror(title='Error', message=g+' already in the list!')
+                else:
+                    self.params["Genes"].append(g)
                     # update list choice
                     edit_fill(l1, self.params["Genes"])
                     l2['value'] = tuple(self.params["Genes"])
                     l4['value'] = tuple(self.params["Genes"])
+            def delGene(g):
+                if g in np.unique(self.loadModelToplogy[['regulator','target']].values): # check whether it evolved in the edges of GRN
+                    tk.messagebox.showerror(title='Error', message=g + ' evolved in the regulation of other genes!')
                 else:
-                    tk.messagebox.showerror(title='Error', message=g + ' not in the list!')
-        tk.Button(nodeFrame,text="Add node",command=lambda: addGene(geneEntry.get())).grid(row=1,column=0,sticky="w",pady=5,padx=20)
-        tk.Button(nodeFrame,text="Delete node",command=lambda: delGene(geneEntry.get())).grid(row=1, column=1, sticky="e",pady=5,padx=20)
-        tk.Label(nodeFrame, text="Genes list search:").grid(row=2, column=0, sticky="w",pady=5,padx=5)
+                    if g in self.params["Genes"]:
+                        self.params["Genes"].remove(g)
+                        # update list choice
+                        edit_fill(l1, self.params["Genes"])
+                        l2['value'] = tuple(self.params["Genes"])
+                        l4['value'] = tuple(self.params["Genes"])
+                    else:
+                        tk.messagebox.showerror(title='Error', message=g + ' not in the list!')
+            tk.Button(nodeFrame,text="Add node",command=lambda: addGene(geneEntry.get())).grid(row=1,column=0,sticky="w",pady=5,padx=20)
+            tk.Button(nodeFrame,text="Delete node",command=lambda: delGene(geneEntry.get())).grid(row=1, column=1, sticky="e",pady=5,padx=20)
+            tk.Label(nodeFrame, text="Genes list search:").grid(row=2, column=0, sticky="w",pady=5,padx=5)
 
-        l1.pack(side=tk.LEFT, fill=tk.BOTH)
-        edit_fill(l1, self.params["Genes"])
-        s1 = tk.Scrollbar(l1_f)
-        s1.pack(side=tk.RIGHT, fill=tk.BOTH)
-        l1.config(yscrollcommand=s1.set)
-        s1.config(command=l1.yview)
-        e1=tk.Entry(nodeFrame,bg="white",fg="blue")
-        e1.grid(row=2, column=1, sticky="e",pady=5,padx=5)
-        e1.bind('<KeyRelease>', lambda eve1: edit_search(eve1,self.params["Genes"],l1))
-        # edge frame
-        tk.Label(editWin, text="Edge").pack(pady=10)
-        edgeFrame.pack()
-        tk.Label(edgeFrame, text="Source:").grid(row=0, column=0, sticky="w",padx=5,pady=5)
-        l2.grid(row=0, column=1, sticky="e",padx=5,pady=5)
-        l2['value'] = tuple(self.params["Genes"])
-        tk.Label(edgeFrame, text="Relationship:").grid(row=1, column=0, sticky="w",padx=5,pady=5)
-        l3 = ttk.Combobox(edgeFrame)
-        l3.grid(row=1, column=1, sticky="e",padx=5,pady=5)
-        l3['value'] = tuple(['+','-'])
-        tk.Label(edgeFrame, text="Target:").grid(row=2, column=0, sticky="w",padx=5,pady=5)
-        l4.grid(row=2, column=1, sticky="e",padx=5,pady=5)
-        l4['value'] = tuple(self.params["Genes"])
-        l5_f = tk.Frame(edgeFrame)
-        l5_f.grid(row=5, column=1, sticky="e", padx=5, pady=5)
-        l5 = tk.Listbox(l5_f, height=3)
-        def addEdge(s,func,t): # add/modify edge
-            if not self.loadModelToplogy.loc[(self.loadModelToplogy['regulator'] == s) & (self.loadModelToplogy['target']==t)].empty:
-                id = self.loadModelToplogy.loc[(self.loadModelToplogy['regulator'] == s) & (self.loadModelToplogy['target'] == t)].index
-                if self.loadModelToplogy.loc[id, 'func'].values[0]==func:
-                    tk.messagebox.showerror(title='Error', message=s + func + t + ' already in the list!')
+            l1.pack(side=tk.LEFT, fill=tk.BOTH)
+            edit_fill(l1, self.params["Genes"])
+            s1 = tk.Scrollbar(l1_f)
+            s1.pack(side=tk.RIGHT, fill=tk.BOTH)
+            l1.config(yscrollcommand=s1.set)
+            s1.config(command=l1.yview)
+            e1=tk.Entry(nodeFrame,bg="white",fg="blue")
+            e1.grid(row=2, column=1, sticky="e",pady=5,padx=5)
+            e1.bind('<KeyRelease>', lambda eve1: edit_search(eve1,self.params["Genes"],l1))
+            # edge frame
+            tk.Label(editWin, text="Edge").pack(pady=10)
+            edgeFrame.pack()
+            tk.Label(edgeFrame, text="Source:").grid(row=0, column=0, sticky="w",padx=5,pady=5)
+            l2.grid(row=0, column=1, sticky="e",padx=5,pady=5)
+            l2['value'] = tuple(self.params["Genes"])
+            tk.Label(edgeFrame, text="Relationship:").grid(row=1, column=0, sticky="w",padx=5,pady=5)
+            l3 = ttk.Combobox(edgeFrame)
+            l3.grid(row=1, column=1, sticky="e",padx=5,pady=5)
+            l3['value'] = tuple(['+','-'])
+            tk.Label(edgeFrame, text="Target:").grid(row=2, column=0, sticky="w",padx=5,pady=5)
+            l4.grid(row=2, column=1, sticky="e",padx=5,pady=5)
+            l4['value'] = tuple(self.params["Genes"])
+            l5_f = tk.Frame(edgeFrame)
+            l5_f.grid(row=5, column=1, sticky="e", padx=5, pady=5)
+            l5 = tk.Listbox(l5_f, height=3)
+            def addEdge(s,func,t): # add/modify edge
+                if not self.loadModelToplogy.loc[(self.loadModelToplogy['regulator'] == s) & (self.loadModelToplogy['target']==t)].empty:
+                    id = self.loadModelToplogy.loc[(self.loadModelToplogy['regulator'] == s) & (self.loadModelToplogy['target'] == t)].index
+                    if self.loadModelToplogy.loc[id, 'func'].values[0]==func:
+                        tk.messagebox.showerror(title='Error', message=s + func + t + ' already in the list!')
+                    else:
+                        self.loadModelToplogy.loc[id, 'func'] = func
+                        tk.messagebox.showinfo(title='Info',message='You have changed relationship from ' + s + ' to ' + t + ' as ' + func + '!')
+                        edit_fill(l5, dataFrame2comboboxList(self.loadModelToplogy))
                 else:
-                    self.loadModelToplogy.loc[id, 'func'] = func
-                    tk.messagebox.showinfo(title='Info',message='You have changed relationship from ' + s + ' to ' + t + ' as ' + func + '!')
+                    self.loadModelToplogy=self.loadModelToplogy.append([{'regulator': s, 'target': t, 'func': func}], ignore_index=True)
                     edit_fill(l5, dataFrame2comboboxList(self.loadModelToplogy))
-            else:
-                self.loadModelToplogy=self.loadModelToplogy.append([{'regulator': s, 'target': t, 'func': func}], ignore_index=True)
-                edit_fill(l5, dataFrame2comboboxList(self.loadModelToplogy))
-        def delEdge(s,func,t):
-            if self.loadModelToplogy.loc[(self.loadModelToplogy['regulator'] == s) & (self.loadModelToplogy['target']==t)&(self.loadModelToplogy['func']==func)].empty:
-                tk.messagebox.showerror(title='Error', message=s+func+t + ' not in the list!')
-            else:
-                id = self.loadModelToplogy.loc[(self.loadModelToplogy['regulator'] == s) & (self.loadModelToplogy['target'] == t) & (self.loadModelToplogy['func']==func)].index
-                self.loadModelToplogy = self.loadModelToplogy.drop(index=id)
-                edit_fill(l5, dataFrame2comboboxList(self.loadModelToplogy))
-        tk.Button(edgeFrame, text="Add edge", command=lambda: addEdge(l2.get(),l3.get(),l4.get())).grid(row=3, column=0, sticky="w",padx=20,pady=5)
-        tk.Button(edgeFrame, text="Delete edge", command=lambda: delEdge(l2.get(),l3.get(),l4.get())).grid(row=3, column=1, sticky="e",padx=20,pady=5)
-        tk.Label(edgeFrame, text="Edges list search:").grid(row=4, column=0, sticky="w",padx=5,pady=5)
-        l5.pack(side=tk.LEFT,fill=tk.BOTH)
-        edit_fill(l5, dataFrame2comboboxList(self.loadModelToplogy))
-        s2 = tk.Scrollbar(l5_f)
-        s2.pack(side=tk.RIGHT, fill=tk.BOTH)
-        l5.config(yscrollcommand=s2.set)
-        s2.config(command=l5.yview)
-        e5=tk.Entry(edgeFrame,bg="white",fg="blue")
-        e5.grid(row=4, column=1, sticky="e", pady=5, padx=5)
-        e5.bind('<KeyRelease>', lambda eve2: edit_search(eve2, dataFrame2comboboxList(self.loadModelToplogy), l5))
-        def submitEditGRN():
-            # call grnChooser2graph to update params
-            self.params['IM'], self.params['Sys_Dim'], self.params['Genes'] = grnChooser2graph(self.loadModelToplogy)
-            tk.messagebox.showinfo(title='Info', message='GRN topology editing successfully!')
-        tk.Button(editWin,text="OK",font=('normal', 14, 'bold'),bg = "white", fg = "black",command=submitEditGRN).pack(pady=20)
+            def delEdge(s,func,t):
+                if self.loadModelToplogy.loc[(self.loadModelToplogy['regulator'] == s) & (self.loadModelToplogy['target']==t)&(self.loadModelToplogy['func']==func)].empty:
+                    tk.messagebox.showerror(title='Error', message=s+func+t + ' not in the list!')
+                else:
+                    id = self.loadModelToplogy.loc[(self.loadModelToplogy['regulator'] == s) & (self.loadModelToplogy['target'] == t) & (self.loadModelToplogy['func']==func)].index
+                    self.loadModelToplogy = self.loadModelToplogy.drop(index=id)
+                    edit_fill(l5, dataFrame2comboboxList(self.loadModelToplogy))
+            tk.Button(edgeFrame, text="Add edge", command=lambda: addEdge(l2.get(),l3.get(),l4.get())).grid(row=3, column=0, sticky="w",padx=20,pady=5)
+            tk.Button(edgeFrame, text="Delete edge", command=lambda: delEdge(l2.get(),l3.get(),l4.get())).grid(row=3, column=1, sticky="e",padx=20,pady=5)
+            tk.Label(edgeFrame, text="Edges list search:").grid(row=4, column=0, sticky="w",padx=5,pady=5)
+            l5.pack(side=tk.LEFT,fill=tk.BOTH)
+            edit_fill(l5, dataFrame2comboboxList(self.loadModelToplogy))
+            s2 = tk.Scrollbar(l5_f)
+            s2.pack(side=tk.RIGHT, fill=tk.BOTH)
+            l5.config(yscrollcommand=s2.set)
+            s2.config(command=l5.yview)
+            e5=tk.Entry(edgeFrame,bg="white",fg="blue")
+            e5.grid(row=4, column=1, sticky="e", pady=5, padx=5)
+            e5.bind('<KeyRelease>', lambda eve2: edit_search(eve2, dataFrame2comboboxList(self.loadModelToplogy), l5))
+            def submitEditGRN():
+                # call grnChooser2graph to update params
+                self.params['IM'], self.params['Sys_Dim'], self.params['Genes'] = grnChooser2graph(self.loadModelToplogy)
+                tk.messagebox.showinfo(title='Info', message='GRN topology editing successfully!')
+            tk.Button(editWin,text="OK",font=('normal', 14, 'bold'),bg = "white", fg = "black",command=submitEditGRN).pack(pady=20)
 
     def autoODEGen(self,father,win,hill, threshold, act, self_act, inh, degrade):
         hill = int(hill)  # 2,3,4
@@ -559,26 +620,32 @@ class MainPage(object):
             coeFrame.pack(padx=20,pady=5,fill="both")
             tk.Label(coeFrame, text='Hill coefficient:').grid(row=0,column=0,sticky='WE')
             e1 = tk.Entry(coeFrame, textvariable=tk.StringVar,width=8)
+            e1.delete(0, 'end')
             e1.insert(0, str(v1))
             e1.grid(row=0, column=1,sticky='WE')
             tk.Label(coeFrame, text='Threshold:').grid(row=0, column=2,sticky='WE')
             e2 = tk.Entry(coeFrame, textvariable=tk.StringVar,width=8)
+            e2.delete(0, 'end')
             e2.insert(0, str(v2))
             e2.grid(row=0, column=3,sticky='WE')
             tk.Label(coeFrame, text='Activation:').grid(row=0, column=4,sticky='WE')
             e3 = tk.Entry(coeFrame, textvariable=tk.StringVar,width=8)
+            e3.delete(0, 'end')
             e3.insert(0, str(v3))
             e3.grid(row=0, column=5,sticky='WE')
             tk.Label(coeFrame, text='Self activation:').grid(row=1, column=0, sticky='WE')
             e4 = tk.Entry(coeFrame, textvariable=tk.StringVar, width=8)
+            e4.delete(0, 'end')
             e4.insert(0, str(v4))
             e4.grid(row=1, column=1, sticky='WE')
             tk.Label(coeFrame, text='Inhibition:').grid(row=1,column=2,sticky='WE')
             e5 = tk.Entry(coeFrame, textvariable=tk.StringVar,width=8)
+            e5.delete(0, 'end')
             e5.insert(0, str(v5))
             e5.grid(row=1, column=3,sticky='WE')
             tk.Label(coeFrame, text='Degradation:').grid(row=1, column=4,sticky='WE')
             e6 = tk.Entry(coeFrame, textvariable=tk.StringVar,width=8)
+            e6.delete(0, 'end')
             e6.insert(0, str(v6))
             e6.grid(row=1, column=5,sticky='WE')
             tk.Button(coeFrame, text='OK',command=lambda: self.autoODEGen(father,GRNDEsWin,e1.get(),e2.get(),e3.get(),e4.get(),e5.get(),e6.get()),width=6).grid(row=5,column=2,columnspan=2,sticky='WE', pady=5)
@@ -603,9 +670,9 @@ class MainPage(object):
         genes = self.params['Genes']
 
         # draw landscape
-        if self.loadModelType == 'ODE':
+        if self.loadModelType == 'ODE' or (self.loadModelType=='TME' and self.TMEModelType=='ODE'):
             self.simu_t, self.simu_results = ode_simulation(self.params, self.ODEModelOdeCode,self.ODEModelJacCode)
-        elif self.loadModelType == 'GRN' or self.loadModelType == 'seq':
+        elif self.loadModelType == 'GRN' or self.loadModelType == 'seq' or (self.loadModelType=="TME" and (self.TMEModelType=='GRN' or self.TMEModelType=='seq')):
             self.simu_t, self.simu_results = grn_simulation(self.params)
 
         fig.clear()
@@ -715,12 +782,12 @@ class MainPage(object):
 
         # draw landscape
         # tk.Label(self.rightFrame, image=img).grid(row=0, column=0, sticky='wens')
-        if self.loadModelType == 'ODE':
+        if self.loadModelType == 'ODE' or (self.loadModelType=='TME' and self.TMEModelType=='ODE'):
             self.Global_sp, self.Global_sig, self.Global_w = ode_find_stable(self.params, self.ODEModelOdeCode,self.ODEModelJacCode)
             if len(self.Global_sp) == 0:
                 tk.messagebox.showwarning(title='Warning', message='No steady points!')
             self.xAxis, self.yAxis, self.P, self.params['stablePoints'] = ode_tme_draw_landscape(self.params, self.Global_sp, self.Global_sig, self.Global_w)
-        elif self.loadModelType == 'GRN' or self.loadModelType == 'seq':
+        elif self.loadModelType == 'GRN' or self.loadModelType == 'seq' or (self.loadModelType=='TME' and (self.TMEModelType=='GRN' or self.TMEModelType=='seq')):
             self.Global_sp, self.Global_sig, self.Global_w = grn_find_stable(self.params)
             if len(self.Global_sp) == 0:
                 tk.messagebox.showwarning(title='Warning', message='No steady points!')
@@ -744,10 +811,10 @@ class MainPage(object):
 
         fig.colorbar(tmp)
         canvas.draw()
-        tend = time.time()
-        print('The consuming time of a landscape is: ' + str(tend - tstart) + ' s')
-        mem = resource.getrusage(resource.RUSAGE_SELF).ru_maxrss / 1024.0 / 1024.0
-        print('The max consuming memory of a landscape is: '+str(mem)+' MB')
+        # tend = time.time()
+        # print('The consuming time of a landscape is: ' + str(tend - tstart) + ' s')
+        # mem = resource.getrusage(resource.RUSAGE_SELF).ru_maxrss / 1024.0 / 1024.0
+        # print('The max consuming memory of a landscape is: '+str(mem)+' MB')
         self.landAxes=axes1 # be used for drawing path
         l3['value']=([i for i in range(1,np.array(self.params['stablePoints']).shape[0]+1)]) # attractors No. for selection of begin and end atts
         l4['value'] = ([i for i in range(1,np.array(self.params['stablePoints']).shape[0]+1)])
@@ -761,10 +828,10 @@ class MainPage(object):
         self.params['vari_spec'] = np.array([genes.index(marker1), genes.index(marker2)])
         self.params['y_min'] = np.array([marker1_lb, marker2_lb])
         self.params['y_max'] = np.array([marker1_ub, marker2_ub])
-        if self.loadModelType == 'GRN' or self.loadModelType == 'seq':
+        if self.loadModelType == 'GRN' or self.loadModelType == 'seq' or (self.loadModelType=='TME' and (self.TMEModelType=='GRN' or self.TMEModelType=='seq')):
             self.xAxis, self.yAxis, self.P, self.params['stablePoints'] = grn_tme_draw_landscape(
                 self.params, self.Global_sp, self.Global_sig, self.Global_w)
-        elif self.loadModelType == 'ODE':
+        elif self.loadModelType == 'ODE' or (self.loadModelType=='TME' and self.TMEModelType=='ODE'):
             self.xAxis, self.yAxis, self.P, self.params['stablePoints'] = ode_tme_draw_landscape(
                 self.params, self.Global_sp, self.Global_sig, self.Global_w)
         fig.clear()
@@ -845,11 +912,11 @@ class MainPage(object):
             self.params['pointInPath'] = int(pointInPath)
             start = int(att1)  # begin attractor
             end = int(att2)  # end attractor
-            if self.loadModelType == 'ODE':
+            if self.loadModelType == 'ODE' or (self.loadModelType=='TME' and self.TMEModelType=='ODE'):
                 path, action = ode_ss_path(np.array(self.params['stablePoints'][start - 1]),
                                            np.array(self.params['stablePoints'][end - 1]), self.params,
                                            self.ODEModelOdeCode)
-            elif self.loadModelType == 'GRN' or self.loadModelType == 'seq':
+            elif self.loadModelType == 'GRN' or self.loadModelType == 'seq' or (self.loadModelType=='TME' and (self.TMEModelType=='GRN' or self.TMEModelType=='seq')):
                 path, action = grn_ss_path(np.array(self.params['stablePoints'][start - 1]),
                                            np.array(self.params['stablePoints'][end - 1]), self.params)
             attbeginend = str(start) + '-' + str(end)
@@ -897,10 +964,10 @@ class MainPage(object):
                             c=color_list[random_color_index], marker='>', zorder=3)
 
             canvas.draw()
-            tend = time.time()
-            print('The consuming time of a path is: ' + str(tend - tstart) + ' s')
-            mem = resource.getrusage(resource.RUSAGE_SELF).ru_maxrss / 1024.0 / 1024.0
-            print('The max consuming memory of a path is: ' + str(mem) + ' MB')
+            # tend = time.time()
+            # print('The consuming time of a path is: ' + str(tend - tstart) + ' s')
+            # mem = resource.getrusage(resource.RUSAGE_SELF).ru_maxrss / 1024.0 / 1024.0
+            # print('The max consuming memory of a path is: ' + str(mem) + ' MB')
 
     def openLandscapePathWindow(self):
         landPathWin=getPoppedWindow(father=self.root,width=910,height=640,title='Epigenetic Landscape and Kinetic Path')
@@ -999,13 +1066,10 @@ class MainPage(object):
         toolbar.update()
         toolbar.pack(side=tk.TOP, pady=2, padx=5, ipadx=5)
         canvas._tkcanvas.pack(pady=2, padx=10, ipadx=5, side=tk.TOP, fill=tk.BOTH, expand=True)
-        tk.Button(rightFrame, text='Save result', command=lambda: saveLand(self.loadModelType,self.Global_sp,self.Global_sig,self.Global_w,self.savepath,self.pathsAction,self.params,self.ODEModelOdeCode)).pack(side=tk.BOTTOM)
+        tk.Button(rightFrame, text='Save result', command=lambda: saveLand(self.loadModelType,self.loadModelToplogy.values.tolist(),self.loadModelDEs.values.tolist(),self.Global_sp,self.Global_sig,self.Global_w,self.savepath,self.pathsAction,self.params,self.ODEModelOdeCode,self.ODEModelJacCode)).pack(side=tk.BOTTOM)
 
-    # def parseData(self): # from model path to model
-    #     if self.loadModelType=='ODE':
-    #     if self.loadModelType=='GRN':
-    #     if self.loadModelType=='TME':
-    #     if self.loadModelType=='seq': # until finish the GRN inference the GRN model will be stored
+        if self.loadModelType=='TME':
+            self.landAxes=restoreLandscape(fig,canvas,self.loadModelPaths['TME'],e1,e2,e3,e4,l1,l2,e5,e6,e7,e8,tmax,pointInPath,l3,l4)
 
     def seqAnalysis(self,father):
         seqAnalysisWin=getPoppedWindow(father=father,width=660,height=540,title='scRNA-seq Analysis')
@@ -1196,7 +1260,7 @@ main_window.grid_rowconfigure(0, weight=1)
 main_window.grid_columnconfigure(0, weight=1)
 MainPage(main_window)
 main_window.mainloop()
-cef.Shutdown()
+# cef.Shutdown()
 
 '''
 The GRN model refers to Delimited text format
